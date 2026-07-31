@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第130回九州・沖縄形成外科学会学術集会</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233B;--ink-soft:#3D4E6B;--paper:#F4F6F9;--card:#FFFFFF;--line:#D8DEE7;
+    --teal:#0F766E;--teal-deep:#0B5C55;--amber:#B45309;
+    --shadow:0 1px 2px rgba(22,35,59,.06),0 12px 32px rgba(22,35,59,.08);--maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .mincho{font-family:"Shippori Mincho B1",serif;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  .eyebrow{font-family:"Shippori Mincho B1",serif;font-size:.82rem;letter-spacing:.28em;color:var(--teal);display:inline-flex;align-items:center;gap:.6em;text-transform:uppercase;}
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--teal);display:inline-block;}
+
+  .accentbar{height:4px;background:linear-gradient(90deg,var(--teal),var(--ink));}
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(244,246,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.02rem;letter-spacing:.03em;line-height:1.3;}
+  .brand small{display:block;font-family:"Noto Sans JP";font-weight:400;font-size:.6rem;letter-spacing:.14em;color:var(--ink-soft);}
+  .nav-links{display:flex;align-items:center;gap:24px;font-size:.86rem;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);transition:color .2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--teal);}
+  .nav-cta{background:var(--teal);color:#fff;padding:9px 18px;border-radius:2px;text-decoration:none;font-weight:700;font-size:.84rem;}
+  .nav-cta:hover{background:var(--teal-deep);}
+  .menu-btn{display:none;background:none;border:0;font-size:1.5rem;color:var(--ink);cursor:pointer;}
+
+  .hero{background:radial-gradient(120% 90% at 85% -10%, rgba(15,118,110,.35), transparent 55%),var(--ink);color:var(--paper);position:relative;overflow:hidden;}
+  .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:100% 46px;opacity:.5;pointer-events:none;}
+  .hero-inner{padding:80px 24px 70px;position:relative;z-index:1;}
+  .hero .eyebrow{color:#7FD8CF;}
+  .hero .eyebrow::before{background:#7FD8CF;}
+  .theme-lead{font-size:.95rem;color:#9FB0C9;letter-spacing:.1em;margin-top:16px;}
+  .conf-title{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(1.9rem,4.6vw,3.15rem);line-height:1.32;letter-spacing:.03em;margin-top:8px;}
+  .theme-sub{font-family:"Shippori Mincho B1",serif;font-weight:600;font-size:clamp(1.35rem,2.8vw,1.9rem);color:#C9D3E4;margin-top:2px;letter-spacing:.08em;}
+  .theme{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:clamp(2.1rem,5.4vw,3.8rem);line-height:1.25;margin:4px 0 14px;letter-spacing:.03em;}
+  .conf-name{font-size:1.1rem;color:#C9D3E4;font-weight:500;letter-spacing:.03em;}
+  .facts{display:flex;flex-wrap:wrap;gap:14px 44px;margin:34px 0 4px;}
+  .fact{display:flex;flex-direction:column;gap:2px;}
+  .fact .lbl{font-size:.72rem;letter-spacing:.2em;color:#8B9AB4;}
+  .fact .val{font-family:"Shippori Mincho B1",serif;font-size:1.2rem;font-weight:600;}
+
+  .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;max-width:720px;}
+  .cta{display:flex;flex-direction:column;gap:4px;text-decoration:none;padding:22px 24px;border-radius:4px;transition:transform .18s,box-shadow .18s;}
+  .cta .kicker{font-size:.72rem;letter-spacing:.22em;opacity:.85;}
+  .cta .main{font-family:"Shippori Mincho B1",serif;font-size:1.5rem;font-weight:700;display:flex;align-items:center;justify-content:space-between;}
+  .cta .sub{font-size:.78rem;opacity:.85;}
+  .cta .arrow{transition:transform .18s;}
+  .cta:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+  .cta:hover .arrow{transform:translateX(4px);}
+  .cta-abstract{background:var(--teal);color:#fff;}
+  .cta-abstract:hover{background:var(--teal-deep);}
+  .cta-regist{background:var(--paper);color:var(--ink);}
+  .cta-regist:hover{background:#fff;}
+
+  section{padding:78px 0;}
+  .sec-head{margin-bottom:40px;}
+  .sec-head h2{font-family:"Shippori Mincho B1",serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;margin-top:12px;letter-spacing:.03em;}
+  .sec-head p.lead{color:var(--ink-soft);margin-top:12px;font-size:.95rem;max-width:680px;}
+
+  /* registration blocks */
+  .reg-block{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:36px 34px;box-shadow:var(--shadow);margin-bottom:28px;}
+  .reg-block:last-child{margin-bottom:0;}
+  .rb-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
+  .rb-no{font-family:"Shippori Mincho B1",serif;color:var(--teal);font-size:.9rem;letter-spacing:.2em;}
+  .rb-head h3{font-family:"Shippori Mincho B1",serif;font-size:1.6rem;}
+  .rb-desc{font-size:.9rem;color:var(--ink-soft);margin-bottom:22px;}
+  .fee-badge{display:inline-flex;gap:18px;flex-wrap:wrap;background:var(--paper);border-radius:4px;padding:14px 20px;margin-bottom:24px;}
+  .fee-badge .fee{display:flex;flex-direction:column;}
+  .fee-badge .fee .k{font-size:.72rem;letter-spacing:.14em;color:var(--ink-soft);}
+  .fee-badge .fee .v{font-family:"Shippori Mincho B1",serif;font-size:1.25rem;font-weight:700;}
+  .deadline{display:inline-flex;align-items:baseline;gap:10px;padding:12px 16px;background:var(--paper);border-left:3px solid var(--amber);border-radius:2px;margin-bottom:24px;}
+  .deadline .dl-lbl{font-size:.74rem;letter-spacing:.16em;color:var(--amber);font-weight:700;white-space:nowrap;}
+  .deadline .dl-date{font-family:"Shippori Mincho B1",serif;font-size:1.1rem;font-weight:700;}
+
+  /* form */
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{font-size:.82rem;font-weight:700;color:var(--ink);}
+  .field label .req{color:var(--amber);font-size:.72rem;margin-left:6px;}
+  .field input,.field select,.field textarea{
+    font-family:inherit;font-size:.92rem;color:var(--ink);background:#fff;
+    border:1px solid var(--line);border-radius:4px;padding:11px 13px;transition:border-color .15s,box-shadow .15s;
+  }
+  .field textarea{resize:vertical;min-height:120px;line-height:1.7;}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,118,110,.12);}
+  .field .hint{font-size:.74rem;color:var(--ink-soft);}
+  .form-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:24px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:.95rem;padding:14px 26px;border-radius:3px;transition:background .2s,transform .18s;}
+  .btn-primary{background:var(--teal);color:#fff;}
+  .btn-primary:hover{background:var(--teal-deep);transform:translateY(-2px);}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
+  .form-err{display:none;background:#FDEBEC;border:1px solid #F0B4B8;color:#9B1C24;font-size:.85rem;padding:12px 16px;border-radius:4px;margin-top:16px;}
+  .form-done{display:none;background:#E8F5F2;border:1px solid #A6D9D0;color:var(--teal-deep);font-size:.85rem;padding:14px 16px;border-radius:4px;margin-top:16px;line-height:1.8;}
+  .copy-area{display:none;width:100%;margin-top:12px;font-family:inherit;font-size:.82rem;border:1px solid var(--line);border-radius:4px;padding:12px;min-height:140px;background:#fff;color:var(--ink-soft);}
+  .receipt-note{font-size:.8rem;color:var(--ink-soft);background:var(--paper);border-radius:4px;padding:14px 16px;margin-top:20px;line-height:1.8;}
+  .receipt-note strong{color:var(--ink);}
+
+  /* overview */
+  .ov-table{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+  .ov-row{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid var(--line);}
+  .ov-row:last-child{border-bottom:0;}
+  .ov-row dt{background:#EEF1F6;padding:16px 22px;font-weight:700;font-size:.9rem;font-family:"Shippori Mincho B1",serif;}
+  .ov-row dd{padding:16px 22px;font-size:.92rem;color:var(--ink-soft);}
+
+  /* program */
+  .prog-list{display:flex;flex-direction:column;gap:16px;}
+  .prog-item{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:26px 30px;display:flex;gap:24px;align-items:flex-start;}
+  .prog-item .tag{font-family:"Shippori Mincho B1",serif;font-size:.78rem;letter-spacing:.14em;color:#fff;background:var(--teal);padding:5px 12px;border-radius:2px;white-space:nowrap;margin-top:4px;}
+  .prog-item h3{font-family:"Shippori Mincho B1",serif;font-size:1.2rem;margin-bottom:4px;}
+  .prog-item p{font-size:.9rem;color:var(--ink-soft);}
+
+  /* access */
+  .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;}
+  .map-placeholder{aspect-ratio:16/10;background:#E6EAF1;border:1px dashed #B9C3D3;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#8695AE;font-size:.85rem;text-align:center;padding:20px;}
+
+  footer{background:var(--ink);color:#C9D3E4;padding:56px 0 40px;}
+  footer .f-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:28px;}
+  footer .f-brand{font-family:"Shippori Mincho B1",serif;color:#fff;font-size:1.1rem;line-height:1.5;}
+  footer .f-office{font-size:.85rem;line-height:1.95;}
+  footer .f-office strong{color:#fff;font-weight:500;}
+  footer .f-office a{color:#C9D3E4;}
+  footer .copy{margin-top:36px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:.76rem;color:#8B9AB4;}
+
+  @media(max-width:820px){
+    .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:16px 24px;gap:16px;border-bottom:1px solid var(--line);}
+    .menu-btn{display:block;}
+    .cta-row,.form-grid,.access-grid{grid-template-columns:1fr;}
+    .ov-row{grid-template-columns:110px 1fr;}
+    .prog-item{flex-direction:column;gap:12px;}
+    section{padding:56px 0;}
+    .hero-inner{padding:56px 24px 52px;}
+    .reg-block{padding:28px 22px;}
+  }
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;}}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:2px;}
+</style>
+</head>
+<body>
+
+<div class="accentbar"></div>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">第130回 九州・沖縄形成外科学会
+      <small>THE 130TH KYUSHU-OKINAWA SOCIETY OF PLASTIC AND RECONSTRUCTIVE SURGERY</small>
+    </div>
+    <nav class="nav-links" id="navlinks" aria-label="メインナビゲーション">
+      <a href="#overview">開催概要</a>
+      <a href="#registration">各種登録</a>
+      <a href="#program">プログラム</a>
+      <a href="#banquet">懇親会</a>
+      <a href="#access">アクセス</a>
+      <a href="#registration" class="nav-cta">参加登録</a>
+    </nav>
+    <button class="menu-btn" aria-label="メニュー" onclick="var n=document.getElementById('navlinks');n.style.display=(getComputedStyle(n).display==='none'?'flex':'none')">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0;">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">The 130th Annual Meeting</span>
+    <h1 class="conf-title">第130回 九州・沖縄形成外科学会学術集会</h1>
+    <p class="theme-lead" style="margin-top:20px;">大会テーマ</p>
+    <p class="theme-sub">外科教育</p>
+
+    <div class="facts">
+      <div class="fact"><span class="lbl">会 期</span><span class="val mincho">2026年11月14日（土）</span></div>
+      <div class="fact"><span class="lbl">会 場</span><span class="val mincho">聖マリア病院 井手一郎ホール</span></div>
+      <div class="fact"><span class="lbl">会 長</span><span class="val mincho">林 稔（聖マリア病院 形成外科）</span></div>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta cta-abstract" href="#abstract-block">
+        <span class="kicker">ABSTRACT SUBMISSION</span>
+        <span class="main">演題登録 <span class="arrow">→</span></span>
+        <span class="sub">締切：2026年10月17日（土）</span>
+      </a>
+      <a class="cta cta-regist" href="#regist-block">
+        <span class="kicker">REGISTRATION</span>
+        <span class="main">事前参加登録 <span class="arrow">→</span></span>
+        <span class="sub">事前 5,000円／当日 6,000円</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION -->
+<section id="registration">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Registration</span>
+      <h2>各種登録</h2>
+      <p class="lead">下記フォームにご入力のうえ送信ボタンを押すと、事務局宛のメールが作成されます。そのままご送信ください。事務局よりご返信いたします。</p>
+    </div>
+
+    <!-- 事前参加登録 -->
+    <!-- 事前参加登録（登録フォームへの導線） -->
+    <div class="reg-block" id="regist-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">01 ── 事前参加登録</span>
+        <h3>事前参加登録</h3>
+      </div>
+      <p class="rb-desc">本学会は現地開催のみです。円滑な受付のため、事前のご登録にご協力ください。ご登録は下記の登録フォームから承ります（登録後、指定口座へお振込ください）。</p>
+
+      <div class="fee-badge">
+        <div class="fee"><span class="k">事前参加登録（銀行振込）</span><span class="v">5,000円</span></div>
+        <div class="fee"><span class="k">当日参加登録</span><span class="v">6,000円</span></div>
+      </div>
+      <p class="rb-desc" style="margin-top:-8px;">※ 振込手数料を考慮し、当日参加費を6,000円に設定しています。</p>
+
+      <div class="deadline">
+        <span class="dl-lbl">事前参加登録 締切</span>
+        <span class="dl-date mincho">2026年10月31日（土）</span>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:22px 24px;margin-bottom:24px;">
+        <div class="mincho" style="font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:14px;">お振込み先</div>
+        <dl style="display:grid;grid-template-columns:96px 1fr;gap:10px 16px;font-size:.9rem;margin:0;">
+          <dt style="font-weight:700;color:var(--ink-soft);">口座名義</dt>
+          <dd style="margin:0;">第130回九州・沖縄形成外科学会事務局<br><span style="font-size:.76rem;color:var(--ink-soft);letter-spacing:.05em;">ダイヒャクサンジュッカイキュウシュウオキナワケイセイゲカガッカイジムキョク</span></dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">金融機関</dt>
+          <dd style="margin:0;">三井住友銀行〔0009〕</dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">取引支店</dt>
+          <dd style="margin:0;">久留米支店〔718〕</dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">口座種類</dt>
+          <dd style="margin:0;">普通預金</dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">口座番号</dt>
+          <dd style="margin:0;font-weight:700;">1281998</dd>
+        </dl>
+      </div>
+
+      <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbzjKErOv9ykTE6OOKdgcuizH8fobGHnCeBlSLbn0lbOQa4CknAaFluYkj9RXkhMUKfH/exec?page=join" target="_blank" rel="noopener" style="text-decoration:none;font-size:1.02rem;padding:16px 30px;">事前参加登録フォームへ進む →</a>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px;">
+        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
+          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 1</div>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">フォームにお名前・所属・メール・領収書の宛名などを入力して登録</p>
+        </div>
+        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
+          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 2</div>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">受付確認メールが届きます。指定口座へ参加費をお振込ください</p>
+        </div>
+        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
+          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 3</div>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">入金確認後、正式な領収書No.と電子領収書（PDF）をメールでお送りします</p>
+        </div>
+      </div>
+
+      <p class="receipt-note">
+        <strong>領収書について：</strong>領収書No.（通し番号）は、<strong>当方でご入金を確認できた方にのみ</strong>後日メールでお送りします。ご入金確認後、ご登録のメールアドレス宛に<strong>電子領収書（PDF）</strong>をお送りします。宛名はフォームの「領収書の宛名」のとおり作成いたします。<br>
+        <strong>入金確認までのお時間について：</strong>業務の都合上、銀行への記帳が週1回のみのため、ご入金の確認・領収書の発行までお時間をいただきます。あらかじめご了承ください。<br>
+        <strong>※ 本学会は現役の医師のみで運営するお手製の学会です。行き届かない点もございますが、何卒ご容赦ください。</strong>
+      </p>
+    </div>
+
+    <!-- 演題登録 -->
+    <div class="reg-block" id="abstract-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">02 ── 演題登録</span>
+        <h3>演題登録</h3>
+      </div>
+      <p class="rb-desc">一般演題・シンポジウム（テーマ：外科教育）での発表をご希望の方は、下記より演題をご登録ください。</p>
+
+      <div class="deadline">
+        <span class="dl-lbl">登録締切</span>
+        <span class="dl-date mincho">2026年10月17日（土）</span>
+      </div>
+
+      <p class="rb-desc" style="margin-bottom:20px;">演題登録は専用の登録システムで受け付けます。<strong style="color:var(--ink);">ご自身で設定したメールアドレスとパスワード</strong>でログインでき、登録後は<strong style="color:var(--ink);">締切までいつでも抄録を修正</strong>できます。</p>
+
+      <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbzjKErOv9ykTE6OOKdgcuizH8fobGHnCeBlSLbn0lbOQa4CknAaFluYkj9RXkhMUKfH/exec" target="_blank" rel="noopener" style="text-decoration:none;font-size:1.02rem;padding:16px 30px;">演題登録システムへ進む →</a>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px;">
+        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
+          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 1</div>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">メールアドレスとパスワードを設定して新規登録</p>
+        </div>
+        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
+          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 2</div>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">演題名・抄録本文などを入力して送信</p>
+        </div>
+        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
+          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 3</div>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">締切まで、ログインすればいつでも抄録を修正</p>
+        </div>
+      </div>
+
+      <p class="receipt-note">
+        <strong>ご案内：</strong>登録完了時に、ご登録のメールアドレス宛へ受付確認メールをお送りします。パスワードを紛失された場合は、事務局（mokkox2@yahoo.co.jp）までご連絡ください。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" style="background:#fff;">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Overview</span><h2>開催概要</h2></div>
+    <dl class="ov-table">
+      <div class="ov-row"><dt>大会名</dt><dd>第130回 九州・沖縄形成外科学会学術集会</dd></div>
+      <div class="ov-row"><dt>テーマ</dt><dd>外科教育</dd></div>
+      <div class="ov-row"><dt>会 期</dt><dd>2026年11月14日（土）</dd></div>
+      <div class="ov-row"><dt>会 場</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール（現地開催のみ）</dd></div>
+      <div class="ov-row"><dt>会 長</dt><dd>林 稔（聖マリア病院 形成外科診療部長）</dd></div>
+      <div class="ov-row"><dt>参加費</dt><dd>事前参加登録 5,000円／当日参加登録 6,000円</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Program</span><h2>プログラム</h2>
+      <p class="lead">「外科教育」をテーマに、特別講演・シンポジウム・一般演題を予定しております。</p>
+    </div>
+    <div class="prog-list">
+      <div class="prog-item"><span class="tag">特別講演</span><div><h3>特別講演</h3><p>門松 香一 先生（昭和医科大学 形成外科主任教授／日本形成外科学会理事）</p></div></div>
+      <div class="prog-item"><span class="tag">シンポジウム</span><div><h3>シンポジウム</h3><p>テーマ：外科教育について。外科教育に精通された先生方にご討議いただく予定です。</p></div></div>
+      <div class="prog-item"><span class="tag">一般演題</span><div><h3>一般演題</h3><p>会員の皆様による一般口演。今後の形成外科の発展につながる活発なご議論を期待しております。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BANQUET -->
+<section id="banquet">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Banquet</span>
+      <h2>懇親会のご案内</h2>
+      <p class="lead">学術集会終了後、懇親会（立食パーティ）を開催いたします。会員相互の親睦の場として、皆様のご参加をお待ちしております。</p>
+    </div>
+
+    <div class="reg-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── 懇親会</span>
+        <h3>立食パーティ</h3>
+      </div>
+      <p class="rb-desc">学会会場から懇親会会場まで、マイクロバスをチャーターする予定です。皆様お誘い合わせのうえ、ぜひご参加ください。</p>
+
+      <dl class="ov-table" style="margin-bottom:24px;">
+        <div class="ov-row"><dt>会 場</dt><dd>ハイネスホテル久留米（西鉄久留米駅前）</dd></div>
+        <div class="ov-row"><dt>形 式</dt><dd>立食パーティ</dd></div>
+        <div class="ov-row"><dt>会 費</dt><dd>無料</dd></div>
+        <div class="ov-row"><dt>送 迎</dt><dd>学会会場 ⇔ 懇親会会場間でマイクロバスを運行予定</dd></div>
+      </dl>
+
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;">
+        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
+          <strong style="color:var(--ink);">人数把握へのご協力のお願い</strong><br>
+          事前準備（お食事・マイクロバスの手配等）のため、参加人数の把握が必要です。<strong style="color:var(--ink);">事前参加登録フォームの「懇親会のご参加」欄</strong>にて、ご参加の有無をお知らせください。ご協力のほど、よろしくお願い申し上げます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section id="access" style="background:#fff;">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Access</span><h2>会場・アクセス</h2></div>
+    <div class="access-grid">
+      <div>
+        <h3 class="mincho" style="font-size:1.3rem;margin-bottom:10px;">聖マリア病院 研究センター 1階</h3>
+        <p style="color:var(--ink-soft);font-size:.92rem;line-height:2;">
+          使徒ヨハネ 井手一郎ホール<br>
+          〒830-8543 福岡県久留米市津福本町422<br><br>
+          <strong style="color:var(--ink);">お問い合わせ</strong><br>
+          第130回九州・沖縄形成外科学会事務局<br>
+          TEL：0942-35-3322／FAX：0942-34-3370<br><br>
+          <span style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+            <a href="https://www.st-mary-med.or.jp/resources/file/contentImg/files/%E7%A0%94%E7%A9%B6%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E5%9C%B0%E5%9B%B3%281%29.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal);font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">会場（研究センター）の構内案内図（PDF）はこちら →</a>
+            <a href="https://www.st-mary-med.or.jp/access.html" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;color:var(--teal);font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">公共交通機関・駐車場など、詳しいアクセスはこちら（聖マリア病院 公式サイト）→</a>
+          </span>
+        </p>
+      </div>
+      <div style="aspect-ratio:16/10;border-radius:6px;overflow:hidden;border:1px solid var(--line);">
+        <iframe
+          src="https://maps.google.com/maps?q=%E8%81%96%E3%83%9E%E3%83%AA%E3%82%A2%E7%97%85%E9%99%A2%20%E7%A6%8F%E5%B2%A1%E7%9C%8C%E4%B9%85%E7%95%99%E7%B1%B3%E5%B8%82%E6%B4%A5%E7%A6%8F%E6%9C%AC%E7%94%BA422&z=16&output=embed"
+          width="100%" height="100%" style="border:0;" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="聖マリア病院 会場地図"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <div class="f-brand">第130回 九州・沖縄<br>形成外科学会学術集会</div>
+        <p style="font-size:.85rem;margin-top:10px;color:#8B9AB4;">大会テーマ：外科教育／2026年11月14日（土）</p>
+      </div>
+      <div class="f-office">
+        <strong>第130回九州・沖縄形成外科学会事務局</strong><br>
+        代表　林 稔<br>
+        〒830-8543 福岡県久留米市津福本町422 形成外科医局<br>
+        TEL：0942-35-3322／FAX：0942-34-3370<br>
+        E-mail：<a href="mailto:mokkox2@yahoo.co.jp">mokkox2@yahoo.co.jp</a>
+      </div>
+    </div>
+    <div class="copy">© 2026 第130回九州・沖縄形成外科学会学術集会 All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  function submitReg(containerId, subject){
+    var c = document.getElementById(containerId);
+    var fields = c.querySelectorAll('[data-label]');
+    var missing = [], lines = [];
+    for(var i=0;i<fields.length;i++){
+      var f = fields[i];
+      var label = f.getAttribute('data-label');
+      var val = (f.value||'').trim();
+      if(f.hasAttribute('data-required') && !val){ missing.push(label); }
+      lines.push(label + '：' + (val || '（未記入）'));
+    }
+    var errEl = c.querySelector('.form-err');
+    var doneEl = c.querySelector('.form-done');
+    if(missing.length){
+      errEl.textContent = '次の必須項目をご入力ください：' + missing.join('、');
+      errEl.style.display = 'block';
+      doneEl.style.display = 'none';
+      return;
+    }
+    errEl.style.display = 'none';
+    var body = '第130回九州・沖縄形成外科学会学術集会\n以下の内容で登録いたします。\n\n' + lines.join('\n') + '\n';
+    var mail = 'mailto:mokkox2@yahoo.co.jp?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    c.querySelector('.copy-area').value = 'To: mokkox2@yahoo.co.jp\n件名: ' + subject + '\n\n' + body;
+    doneEl.style.display = 'block';
+    window.location.href = mail;
+  }
+  function copyText(containerId){
+    var c = document.getElementById(containerId);
+    var ta = c.querySelector('.copy-area');
+    if(!ta.value){ submitReg(containerId, c.id==='abstract-block' ? '第130回九州・沖縄形成外科学会 演題登録' : '第130回九州・沖縄形成外科学会 参加登録'); }
+    ta.style.display = 'block';
+    ta.focus(); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    if(navigator.clipboard){ navigator.clipboard.writeText(ta.value); }
+  }
+</script>
+
+</body>
+</html>
