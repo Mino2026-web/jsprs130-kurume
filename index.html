@@ -83,6 +83,28 @@
   .deadline .dl-lbl{font-size:.74rem;letter-spacing:.16em;color:var(--amber);font-weight:700;white-space:nowrap;}
   .deadline .dl-date{font-family:"Shippori Mincho B1",serif;font-size:1.1rem;font-weight:700;}
 
+  /* news */
+  .news-sec{padding:44px 0 8px;}
+  .news{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--amber);border-radius:6px;box-shadow:var(--shadow);padding:24px 30px;}
+  .news-title{display:flex;align-items:baseline;gap:12px;margin-bottom:10px;}
+  .news-title h2{font-family:"Shippori Mincho B1",serif;font-size:1.3rem;}
+  .news-title span{font-family:"Shippori Mincho B1",serif;font-size:.76rem;letter-spacing:.24em;color:var(--amber);}
+  .news ul{list-style:none;}
+  .news li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:12px 0;border-top:1px dashed var(--line);font-size:.92rem;}
+  .news li:first-child{border-top:0;}
+  .news time{font-family:"Shippori Mincho B1",serif;font-weight:700;color:var(--ink-soft);}
+  .news a{color:var(--teal-deep);font-weight:700;}
+  .news .tag-new{display:inline-block;font-size:.68rem;font-weight:700;color:#fff;background:var(--amber);border-radius:2px;padding:1px 7px;margin-right:6px;vertical-align:1px;}
+  .imp{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid var(--amber);border-radius:6px;padding:20px 24px;margin-bottom:24px;}
+  .imp-title{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.08rem;color:var(--ink);margin-bottom:10px;}
+  .imp ul{padding-left:1.3em;font-size:.9rem;color:var(--ink-soft);line-height:1.85;}
+  .imp li{margin-bottom:8px;}
+  .imp li:last-child{margin-bottom:0;}
+  .imp strong{color:var(--ink);}
+  .dl-ext{font-size:.72rem;font-weight:700;color:#fff;background:var(--amber);border-radius:2px;padding:2px 8px;white-space:nowrap;}
+  .dl-old{font-size:.8rem;color:var(--ink-soft);text-decoration:line-through;white-space:nowrap;}
+  @media (max-width:600px){.news{padding:20px 18px;}.news li{grid-template-columns:1fr;gap:2px;}.deadline{flex-wrap:wrap;}}
+
   /* form */
   .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;}
   .field{display:flex;flex-direction:column;gap:6px;}
@@ -193,8 +215,22 @@
       <a class="cta cta-regist" href="#regist-block">
         <span class="kicker">REGISTRATION</span>
         <span class="main">事前参加登録 <span class="arrow">→</span></span>
-        <span class="sub">事前 5,000円／当日 6,000円</span>
+        <span class="sub">締切：2026年11月7日（土）※延長しました<br>事前 5,000円／当日 6,000円</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="news-sec" id="news">
+  <div class="wrap">
+    <div class="news">
+      <div class="news-title"><span>NEWS</span><h2>お知らせ</h2></div>
+      <ul>
+        <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月7日（土）まで延長</a>しました。お振込は11月12日（木）までにお願いいたします。</div></li>
+        <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="#onsite-block">当日受付のご案内</a>を掲載しました（受付開始 12:00／現金のみ）。</div></li>
+        <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="#ads">広告・広報物の取り扱い</a>について掲載しました（企業様の広告受付は終了しました）。</div></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -225,7 +261,22 @@
 
       <div class="deadline">
         <span class="dl-lbl">事前参加登録 締切</span>
-        <span class="dl-date mincho">2026年10月31日（土）</span>
+        <span class="dl-date mincho">2026年11月7日（土）</span>
+        <span class="dl-ext">延長しました</span>
+        <span class="dl-old">当初：10月31日（土）</span>
+      </div>
+
+      <div class="imp">
+        <div class="imp-title">事前参加登録に関する重要なお知らせ</div>
+        <ul>
+          <li><strong>事前参加登録の受付を2026年11月7日（土）まで延長いたしました。</strong></li>
+          <li><strong>お振込は11月12日（木）までにお願いいたします。</strong>他行からのお振込や夕方以降のお振込は、反映が翌営業日になる場合があります。</li>
+          <li><strong>11月13日（金）17時に最終の記帳</strong>を行います。<strong>同日18時までに電子領収書のメールが届かない場合は、未登録扱い（当日受付）</strong>となります。</li>
+          <li>事前参加登録をされても、お振込が確認できない場合は当日受付となります。<strong>お振込済みで当日受付となった方は、受付でお振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</strong></li>
+          <li>お振込をされたのに電子領収書のメールが届かない方は、事務局（<a href="mailto:mokkox2@yahoo.co.jp" style="color:var(--teal-deep);font-weight:700;">mokkox2@yahoo.co.jp</a>）までご連絡ください。</li>
+          <li>事前参加登録を2回以上された場合は、<strong>最後にされたご登録を有効</strong>といたします。重複してお振込をされた場合は、事務局までご連絡ください。</li>
+          <li><strong>ご氏名は正確にご記入ください。</strong>領収書・参加証の作成と、当日受付でのご本人確認に使用いたします。</li>
+        </ul>
       </div>
 
       <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:22px 24px;margin-bottom:24px;">
@@ -271,15 +322,31 @@
 
       <p class="receipt-note">
         <strong>領収書について：</strong>領収書No.（通し番号）は、<strong>当方でご入金を確認できた方にのみ</strong>後日メールでお送りします。ご入金確認後、ご登録のメールアドレス宛に<strong>電子領収書（PDF）</strong>をお送りします。宛名はフォームの「領収書の宛名」のとおり作成いたします。<br>
-        <strong>入金確認までのお時間について：</strong>業務の都合上、銀行への記帳が週1回のみのため、ご入金の確認・領収書の発行までお時間をいただきます。あらかじめご了承ください。<br>
+        <strong>入金確認までのお時間について：</strong>業務の都合上、銀行への記帳は数日おきにまとめて行っているため、ご入金の確認・領収書の発行までお時間をいただきます。<strong>最終の記帳は11月13日（金）17時</strong>です。あらかじめご了承ください。<br>
         <strong>※ 本学会は現役の医師のみで運営するお手製の学会です。行き届かない点もございますが、何卒ご容赦ください。</strong>
       </p>
+    </div>
+
+    <!-- 当日受付 -->
+    <div class="reg-block" id="onsite-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">02 ── 当日受付</span>
+        <h3>当日受付のご案内</h3>
+      </div>
+      <p class="rb-desc">事前参加登録がお済みでない方、およびお振込が確認できず当日受付となった方は、会場の参加受付にてお手続きください。</p>
+      <dl class="ov-table" style="margin-bottom:20px;">
+        <div class="ov-row"><dt>受付開始</dt><dd>2026年11月14日（土）12:00〜（プログラム・抄録集の日程表のとおり）</dd></div>
+        <div class="ov-row"><dt>場 所</dt><dd>聖マリア病院 研究センター 1階 参加受付</dd></div>
+        <div class="ov-row"><dt>当日参加費</dt><dd><strong style="color:var(--ink);">6,000円（現金のみ）</strong><br>クレジットカード・電子マネー等はご利用いただけません。お釣りのないようご用意いただけますと幸いです。</dd></div>
+        <div class="ov-row"><dt>事前登録の方</dt><dd>メールでお送りした<strong style="color:var(--ink);">参加証（PDF）を印刷して</strong>ご持参ください。</dd></div>
+        <div class="ov-row"><dt>お振込済みで<br>当日受付の方</dt><dd>お振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</dd></div>
+      </dl>
     </div>
 
     <!-- 演者の方へ -->
     <div class="reg-block" id="abstract-block">
       <div class="rb-head">
-        <span class="rb-no mincho">02 ── 演者の方へ</span>
+        <span class="rb-no mincho">03 ── 演者の方へ</span>
         <h3>演者の方へ</h3>
       </div>
 
@@ -490,6 +557,47 @@
         </p>
       </div>
       <p class="rb-desc" style="margin:20px 0 0;">何卒よろしくお願い申し上げます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADS -->
+<section id="ads">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Advertising</span>
+      <h2>広告・広報物について</h2>
+      <p class="lead">本学会における広告・広報物の取り扱いについてご案内いたします。</p>
+    </div>
+
+    <div class="reg-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── 企業様</span>
+        <h3>企業様の広告</h3>
+      </div>
+      <p class="rb-desc" style="margin-bottom:0;">企業様の広告のお申し込みは、<strong style="color:var(--ink);">受付を終了いたしました</strong>。多数のご協賛を賜り、誠にありがとうございました。</p>
+    </div>
+
+    <div class="reg-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── 学会・研究会</span>
+        <h3>他学会・研究会の広報</h3>
+      </div>
+      <p class="rb-desc">他学会・研究会の開催案内につきましては、下記のとおりお取り扱いいたします。</p>
+      <dl class="ov-table" style="margin-bottom:20px;">
+        <div class="ov-row"><dt>チラシ・ポスター</dt><dd>会場でのチラシ配布・ポスター掲示は予定しておりません。</dd></div>
+        <div class="ov-row"><dt>抄録集への掲載</dt><dd>抄録集の準備の都合上、<strong style="color:var(--ink);">受付を終了いたしました</strong>。</dd></div>
+        <div class="ov-row"><dt>幕間スライド</dt><dd><strong style="color:var(--ink);">受け付けております。</strong>セッションの合間に会場スクリーンで上映いたします。</dd></div>
+      </dl>
+      <div class="deadline">
+        <span class="dl-lbl">幕間スライド 締切</span>
+        <span class="dl-date mincho">2026年11月7日（土）</span>
+      </div>
+      <p class="receipt-note" style="margin-top:0;">
+        <strong>形式：</strong>16:9・1枚、PDF形式<br>
+        <strong>送付先：</strong>第130回九州・沖縄形成外科学会事務局（<a href="mailto:mokkox2@yahoo.co.jp" style="color:var(--teal-deep);font-weight:700;">mokkox2@yahoo.co.jp</a>）<br>
+        メールの件名に「幕間スライド」と学会・研究会名をご記載ください。準備の都合上、締切後のお申し込みはお受けできませんので、ご了承ください。
+      </p>
     </div>
   </div>
 </section>
