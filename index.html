@@ -131,6 +131,19 @@
   .receipt-note strong{color:var(--ink);}
 
   /* overview */
+  .ck-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:22px;}
+  .ck-card{border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:6px;padding:20px 22px;background:#fff;}
+  .ck-card.alt{border-top-color:var(--amber);}
+  .ck-lbl{font-size:.74rem;letter-spacing:.14em;font-weight:700;color:var(--teal);}
+  .ck-card.alt .ck-lbl{color:var(--amber);}
+  .ck-card h4{font-family:"Shippori Mincho B1",serif;font-size:1.15rem;margin:4px 0 12px;color:var(--ink);}
+  .ck-card ol{padding-left:1.3em;font-size:.9rem;color:var(--ink-soft);line-height:1.8;margin:0;}
+  .ck-card li{margin-bottom:6px;}
+  .ck-card li:last-child{margin-bottom:0;}
+  .ck-card strong{color:var(--ink);}
+  .ck-note{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:.82rem;color:var(--ink-soft);line-height:1.7;}
+  .nohold{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border-left:3px solid var(--ink);border-radius:2px;padding:12px 16px;margin-bottom:22px;font-size:.9rem;color:var(--ink-soft);line-height:1.7;}
+  .nohold strong{color:var(--ink);}
   .ov-table{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
   .ov-row{display:grid;grid-template-columns:180px 1fr;border-bottom:1px solid var(--line);}
   .ov-row:last-child{border-bottom:0;}
@@ -227,6 +240,7 @@
     <div class="news">
       <div class="news-title"><span>NEWS</span><h2>お知らせ</h2></div>
       <ul>
+        <li><time datetime="2026-11-02">2026.11.02</time><div><span class="tag-new">NEW</span><a href="#onsite-block">当日受付のご案内</a>を更新しました。参加証は<strong>印刷またはPDF画面のご提示</strong>で受付いたします（名札のご用意はございません）。</div></li>
         <li><time datetime="2026-11-02">2026.11.02</time><div><span class="tag-new">NEW</span><a href="#banquet">懇親会の帰りの送迎バス</a>と、<a href="#access">駐車券の割引・交通のご案内</a>を掲載しました。</div></li>
         <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="program_abstracts.pdf?v=19" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>を更新しました（各演題のメモ欄、演者・座長索引を追加）。</div></li>
         <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月7日（土）まで延長</a>しました。お振込は11月12日（木）までにお願いいたします。</div></li>
@@ -278,6 +292,7 @@
           <li>お振込をされたのに電子領収書のメールが届かない方は、事務局（<a href="mailto:mokkox2@yahoo.co.jp" style="color:var(--teal-deep);font-weight:700;">mokkox2@yahoo.co.jp</a>）までご連絡ください。</li>
           <li>事前参加登録を2回以上された場合は、<strong>最後にされたご登録を有効</strong>といたします。重複してお振込をされた場合は、事務局までご連絡ください。</li>
           <li><strong>ご氏名は正確にご記入ください。</strong>領収書・参加証の作成と、当日受付でのご本人確認に使用いたします。</li>
+          <li><strong>当日は、参加証（PDF）を印刷してご持参いただくか、PDFの画面を受付でお見せください。</strong>名札（ネームホルダー）のご用意はございません。詳しくは<a href="#onsite-block" style="color:var(--teal-deep);font-weight:700;">〔当日受付のご案内〕</a>をご覧ください。</li>
         </ul>
       </div>
 
@@ -318,7 +333,7 @@
         </div>
         <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
           <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 4</div>
-          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">あわせてお送りする<strong style="color:var(--ink);">参加証（PDF）を印刷</strong>し、当日受付に<strong style="color:var(--ink);">ご持参ください</strong></p>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">あわせてお送りする<strong style="color:var(--ink);">参加証（PDF）</strong>を、印刷してご持参いただくか、<strong style="color:var(--ink);">PDFの画面を当日受付でお見せください</strong></p>
         </div>
       </div>
 
@@ -335,13 +350,44 @@
         <span class="rb-no mincho">02 ── 当日受付</span>
         <h3>当日受付のご案内</h3>
       </div>
-      <p class="rb-desc">事前参加登録がお済みでない方、およびお振込が確認できず当日受付となった方は、会場の参加受付にてお手続きください。</p>
+      <p class="rb-desc">学会当日は、会場の参加受付で参加のご確認をいたします。事前参加登録の有無によってお手続きが異なりますので、下記をご確認ください。</p>
+
+      <div class="nohold">
+        <span aria-hidden="true" style="font-size:1.1rem;line-height:1.5;">ⓘ</span>
+        <div><strong>今回は、名札（ネームホルダー）のご用意はございません。</strong>参加証は受付でご提示いただくためのもので、会場内での着用は不要です。</div>
+      </div>
+
+      <div class="ck-grid">
+        <div class="ck-card">
+          <div class="ck-lbl">PRE-REGISTERED</div>
+          <h4>事前参加登録がお済みの方</h4>
+          <ol>
+            <li>メールでお送りした<strong>参加証（PDF）</strong>を、次のいずれかでご用意ください。<br>・<strong>印刷して</strong>ご持参いただく<br>・<strong>スマートフォン等でPDFの画面</strong>をお見せいただく</li>
+            <li>受付で参加証をご提示ください。お手続きは以上です。</li>
+          </ol>
+          <div class="ck-note">
+            ※ 院内には電波が届きにくい場所がございます。画面でお見せいただく場合は、<strong style="color:var(--ink);">PDFをあらかじめ端末に保存</strong>しておいてください。<br>
+            ※ 参加証をお忘れの場合や表示できない場合は、受付の名簿でお名前を確認いたします。
+          </div>
+        </div>
+        <div class="ck-card alt">
+          <div class="ck-lbl">ON-SITE</div>
+          <h4>事前参加登録をされていない方</h4>
+          <ol>
+            <li>受付で<strong>当日登録用紙</strong>に、お名前・ご所属をご記入ください。</li>
+            <li>当日参加費<strong>6,000円（現金のみ）</strong>をお支払いください。</li>
+            <li>その場で<strong>領収書と参加証</strong>をお渡しします。</li>
+          </ol>
+          <div class="ck-note">
+            ※ クレジットカード・電子マネー等はご利用いただけません。お釣りのないようご用意いただけますと幸いです。
+          </div>
+        </div>
+      </div>
+
       <dl class="ov-table" style="margin-bottom:20px;">
-        <div class="ov-row"><dt>受付開始</dt><dd>2026年11月14日（土）12:00〜（プログラム・抄録集の日程表のとおり）</dd></div>
-        <div class="ov-row"><dt>場 所</dt><dd>聖マリア病院 研究センター 1階 参加受付</dd></div>
-        <div class="ov-row"><dt>当日参加費</dt><dd><strong style="color:var(--ink);">6,000円（現金のみ）</strong><br>クレジットカード・電子マネー等はご利用いただけません。お釣りのないようご用意いただけますと幸いです。</dd></div>
-        <div class="ov-row"><dt>事前登録の方</dt><dd>メールでお送りした<strong style="color:var(--ink);">参加証（PDF）を印刷して</strong>ご持参ください。</dd></div>
-        <div class="ov-row"><dt>お振込済みで<br>当日受付の方</dt><dd>お振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</dd></div>
+        <div class="ov-row"><dt>受付開始</dt><dd>2026年11月14日（土）12:00〜（プログラム・抄録集の日程表のとおり）<br>開会は12:25、第1セッションは12:30開始です。受付の混雑を避けるため、<strong style="color:var(--ink);">12:00〜12:20のご来場</strong>にご協力をお願いいたします。</dd></div>
+        <div class="ov-row"><dt>場 所</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール前</dd></div>
+        <div class="ov-row"><dt>お振込済みで<br>当日受付の方</dt><dd>お振込が確認できず当日受付となった方は、お振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</dd></div>
         <div class="ov-row"><dt>お車で<br>お越しの方</dt><dd><strong style="color:var(--ink);">駐車券を参加受付にご提示ください。</strong>駐車料金の割引処理を行います。懇親会にご参加の方も、日中のうちに受付で割引処理をお済ませください。詳しくは<a href="#access" style="color:var(--teal-deep);font-weight:700;">〔会場・アクセス〕</a>をご覧ください。</dd></div>
       </dl>
     </div>
