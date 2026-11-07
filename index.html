@@ -103,6 +103,17 @@
   .imp strong{color:var(--ink);}
   .dl-ext{font-size:.72rem;font-weight:700;color:#fff;background:var(--amber);border-radius:2px;padding:2px 8px;white-space:nowrap;}
   .dl-old{font-size:.8rem;color:var(--ink-soft);text-decoration:line-through;white-space:nowrap;}
+  .dl-closed{font-size:.72rem;font-weight:700;color:#fff;background:var(--ink-soft);border-radius:2px;padding:2px 8px;white-space:nowrap;}
+  /* 未入金の注意喚起 */
+  .cta .warn{display:block;margin-top:8px;padding:7px 10px;background:#FFF4E5;border-left:3px solid var(--amber);border-radius:2px;font-size:.78rem;font-weight:700;line-height:1.6;color:#8A3D06;opacity:1;}
+  .pay-alert{background:#FFF4E5;border:2px solid var(--amber);border-radius:8px;padding:20px 24px;margin-bottom:24px;}
+  .pay-alert .pa-title{display:flex;align-items:center;gap:10px;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.18rem;color:#8A3D06;margin-bottom:10px;line-height:1.5;}
+  .pay-alert .pa-icon{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--amber);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-family:"Noto Sans JP",sans-serif;font-size:1rem;}
+  .pay-alert p{font-size:.93rem;color:var(--ink);line-height:1.9;margin:0 0 6px;}
+  .pay-alert p:last-child{margin-bottom:0;}
+  .pay-alert strong{color:#8A3D06;}
+  .pay-alert .pa-hl{background:linear-gradient(transparent 60%,#FDE68A 60%);font-weight:700;}
+  .btn-note{font-size:.84rem;color:#8A3D06;font-weight:700;margin-top:12px;line-height:1.7;}
   @media (max-width:600px){.news{padding:20px 18px;}.news li{grid-template-columns:1fr;gap:2px;}.deadline{flex-wrap:wrap;}}
 
   /* form */
@@ -228,7 +239,8 @@
       <a class="cta cta-regist" href="#regist-block">
         <span class="kicker">REGISTRATION</span>
         <span class="main">事前参加登録 <span class="arrow">→</span></span>
-        <span class="sub">締切：2026年11月7日（土）※延長しました<br>事前 5,000円／当日 6,000円</span>
+        <span class="sub">締切：2026年11月12日（木）※再延長しました<br>事前 5,000円／当日 6,000円</span>
+        <span class="warn">⚠ ご登録とお振込の両方を11月12日（木）までにお済ませください。お振込が確認できない場合は当日受付（6,000円）となります。</span>
       </a>
     </div>
   </div>
@@ -240,14 +252,16 @@
     <div class="news">
       <div class="news-title"><span>NEWS</span><h2>お知らせ</h2></div>
       <ul>
-        <li><time datetime="2026-11-06">2026.11.06</time><div><span class="tag-new">NEW</span><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>の<strong>確定版</strong>を掲載しました（特別講演の演題名を追加）。</div></li>
-        <li><time datetime="2026-11-05">2026.11.05</time><div><span class="tag-new">NEW</span><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>を更新しました（表記の一部修正）。</div></li>
-        <li><time datetime="2026-11-02">2026.11.02</time><div><span class="tag-new">NEW</span><a href="#onsite-block">当日受付のご案内</a>を更新しました。参加証は<strong>印刷またはPDF画面のご提示</strong>で受付いたします（名札のご用意はございません）。</div></li>
-        <li><time datetime="2026-11-02">2026.11.02</time><div><span class="tag-new">NEW</span><a href="#banquet">懇親会の帰りの送迎バス</a>と、<a href="#access">駐車券の割引・交通のご案内</a>を掲載しました。</div></li>
-        <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>を更新しました（各演題のメモ欄、演者・座長索引を追加）。</div></li>
-        <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月7日（土）まで延長</a>しました。お振込は11月12日（木）までにお願いいたします。</div></li>
-        <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="#onsite-block">当日受付のご案内</a>を掲載しました（受付開始 12:00／現金のみ）。</div></li>
-        <li><time datetime="2026-11-01">2026.11.01</time><div><span class="tag-new">NEW</span><a href="#ads">広告・広報物の取り扱い</a>について掲載しました（企業様の広告受付は終了しました）。</div></li>
+        <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月12日（木）まで再延長</a>しました。お振込も<strong>11月12日（木）まで</strong>にお願いいたします。<strong>お振込が確認できない場合は、当日受付（当日参加費6,000円）</strong>となりますのでご注意ください。</div></li>
+        <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#ads">他学会・研究会の幕間スライド</a>の受付を終了しました。</div></li>
+        <li><time datetime="2026-11-06">2026.11.06</time><div><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>の<strong>確定版</strong>を掲載しました（特別講演の演題名を追加）。</div></li>
+        <li><time datetime="2026-11-05">2026.11.05</time><div><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>を更新しました（表記の一部修正）。</div></li>
+        <li><time datetime="2026-11-02">2026.11.02</time><div><a href="#onsite-block">当日受付のご案内</a>を更新しました。参加証は<strong>印刷またはPDF画面のご提示</strong>で受付いたします（名札のご用意はございません）。</div></li>
+        <li><time datetime="2026-11-02">2026.11.02</time><div><a href="#banquet">懇親会の帰りの送迎バス</a>と、<a href="#access">駐車券の割引・交通のご案内</a>を掲載しました。</div></li>
+        <li><time datetime="2026-11-01">2026.11.01</time><div><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>を更新しました（各演題のメモ欄、演者・座長索引を追加）。</div></li>
+        <li><time datetime="2026-11-01">2026.11.01</time><div><a href="#regist-block">事前参加登録の締切を11月7日（土）まで延長</a>しました。お振込は11月12日（木）までにお願いいたします。</div></li>
+        <li><time datetime="2026-11-01">2026.11.01</time><div><a href="#onsite-block">当日受付のご案内</a>を掲載しました（受付開始 12:00／現金のみ）。</div></li>
+        <li><time datetime="2026-11-01">2026.11.01</time><div><a href="#ads">広告・広報物の取り扱い</a>について掲載しました（企業様の広告受付は終了しました）。</div></li>
       </ul>
     </div>
   </div>
@@ -279,18 +293,24 @@
 
       <div class="deadline">
         <span class="dl-lbl">事前参加登録 締切</span>
-        <span class="dl-date mincho">2026年11月7日（土）</span>
-        <span class="dl-ext">延長しました</span>
-        <span class="dl-old">当初：10月31日（土）</span>
+        <span class="dl-date mincho">2026年11月12日（木）</span>
+        <span class="dl-ext">再延長しました</span>
+        <span class="dl-old">前回：11月7日（土）</span>
+      </div>
+
+      <div class="pay-alert" role="note">
+        <div class="pa-title"><span class="pa-icon" aria-hidden="true">!</span>お振込が完了していない場合は、当日受付となります</div>
+        <p>事前参加登録は、<span class="pa-hl">フォームでのご登録と参加費のお振込の両方</span>が完了して成立します。<strong>ご登録・お振込とも、11月12日（木）まで</strong>にお済ませください。</p>
+        <p><strong>11月13日（金）17時の最終記帳までにお振込が確認できない場合は、当日受付（当日参加費 6,000円・現金のみ）</strong>となります。締切日（11月12日）にご登録の方は、<strong>同日中のお振込</strong>をお願いいたします。</p>
       </div>
 
       <div class="imp">
         <div class="imp-title">事前参加登録に関する重要なお知らせ</div>
         <ul>
-          <li><strong>事前参加登録の受付を2026年11月7日（土）まで延長いたしました。</strong></li>
-          <li><strong>お振込は11月12日（木）までにお願いいたします。</strong>他行からのお振込や夕方以降のお振込は、反映が翌営業日になる場合があります。</li>
+          <li><strong>事前参加登録の受付を2026年11月12日（木）まで再延長いたしました。</strong></li>
+          <li><strong>お振込も11月12日（木）までにお願いいたします。</strong>他行からのお振込や夕方以降のお振込は、反映が翌営業日になる場合があります。</li>
           <li><strong>11月13日（金）17時に最終の記帳</strong>を行います。<strong>同日18時までに電子領収書のメールが届かない場合は、未登録扱い（当日受付）</strong>となります。</li>
-          <li>事前参加登録をされても、お振込が確認できない場合は当日受付となります。<strong>お振込済みで当日受付となった方は、受付でお振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</strong></li>
+          <li>事前参加登録をされても、お振込が確認できない場合は<strong>当日受付（当日参加費 6,000円）</strong>となります。<strong>お振込済みで当日受付となった方は、受付でお振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</strong></li>
           <li>お振込をされたのに電子領収書のメールが届かない方は、事務局（<a href="mailto:mokkox2@yahoo.co.jp" style="color:var(--teal-deep);font-weight:700;">mokkox2@yahoo.co.jp</a>）までご連絡ください。</li>
           <li>事前参加登録を2回以上された場合は、<strong>最後にされたご登録を有効</strong>といたします。重複してお振込をされた場合は、事務局までご連絡ください。</li>
           <li><strong>ご氏名は正確にご記入ください。</strong>領収書・参加証の作成と、当日受付でのご本人確認に使用いたします。</li>
@@ -319,6 +339,7 @@
       </div>
 
       <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbzjKErOv9ykTE6OOKdgcuizH8fobGHnCeBlSLbn0lbOQa4CknAaFluYkj9RXkhMUKfH/exec?page=join" target="_blank" rel="noopener" style="text-decoration:none;font-size:1.02rem;padding:16px 30px;">事前参加登録フォームへ進む →</a>
+      <p class="btn-note">※ ご登録後、11月12日（木）までに必ずお振込ください。お振込が確認できない場合は当日受付（6,000円）となります。</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px;">
         <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
@@ -327,7 +348,7 @@
         </div>
         <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
           <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 2</div>
-          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">受付確認メールが届きます。指定口座へ参加費をお振込ください</p>
+          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">受付確認メールが届きます。<strong style="color:var(--ink);">11月12日（木）までに</strong>指定口座へ参加費をお振込ください</p>
         </div>
         <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
           <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 3</div>
@@ -352,7 +373,7 @@
         <span class="rb-no mincho">02 ── 当日受付</span>
         <h3>当日受付のご案内</h3>
       </div>
-      <p class="rb-desc">学会当日は、会場の参加受付で参加のご確認をいたします。事前参加登録の有無によってお手続きが異なりますので、下記をご確認ください。</p>
+      <p class="rb-desc">学会当日は、会場の参加受付で参加のご確認をいたします。事前参加登録・お振込の状況によってお手続きが異なりますので、下記をご確認ください。</p>
 
       <div class="nohold">
         <span aria-hidden="true" style="font-size:1.1rem;line-height:1.5;">ⓘ</span>
@@ -362,7 +383,8 @@
       <div class="ck-grid">
         <div class="ck-card">
           <div class="ck-lbl">PRE-REGISTERED</div>
-          <h4>事前参加登録がお済みの方</h4>
+          <h4>事前参加登録・お振込がお済みの方</h4>
+          <p style="font-size:.84rem;color:var(--ink-soft);margin:-6px 0 10px;line-height:1.7;">お振込が確認され、電子領収書と参加証（PDF）のメールが届いた方</p>
           <ol>
             <li>メールでお送りした<strong>参加証（PDF）</strong>を、次のいずれかでご用意ください。<br>・<strong>印刷して</strong>ご持参いただく<br>・<strong>スマートフォン等でPDFの画面</strong>をお見せいただく</li>
             <li>受付で参加証をご提示ください。お手続きは以上です。</li>
@@ -374,14 +396,16 @@
         </div>
         <div class="ck-card alt">
           <div class="ck-lbl">ON-SITE</div>
-          <h4>事前参加登録をされていない方</h4>
+          <h4>当日受付の方</h4>
+          <p style="font-size:.84rem;color:var(--ink-soft);margin:-6px 0 10px;line-height:1.7;">事前参加登録をされていない方、および<strong style="color:var(--ink);">ご登録後にお振込が確認できなかった方</strong></p>
           <ol>
             <li>受付で<strong>当日登録用紙</strong>に、お名前・ご所属をご記入ください。</li>
             <li>当日参加費<strong>6,000円（現金のみ）</strong>をお支払いください。</li>
             <li>その場で<strong>領収書と参加証</strong>をお渡しします。</li>
           </ol>
           <div class="ck-note">
-            ※ クレジットカード・電子マネー等はご利用いただけません。お釣りのないようご用意いただけますと幸いです。
+            ※ クレジットカード・電子マネー等はご利用いただけません。お釣りのないようご用意いただけますと幸いです。<br>
+            ※ お振込済みなのにメールが届いていない方は、受付で<strong style="color:var(--ink);">お振込の控え</strong>をご提示ください（追加のお支払いは不要です）。
           </div>
         </div>
       </div>
@@ -454,7 +478,7 @@
       <div class="ov-row"><dt>会 期</dt><dd>2026年11月14日（土）</dd></div>
       <div class="ov-row"><dt>会 場</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール（現地開催のみ）</dd></div>
       <div class="ov-row"><dt>会 長</dt><dd>林 稔（聖マリア病院 形成外科診療部長）</dd></div>
-      <div class="ov-row"><dt>参加費</dt><dd>事前参加登録 5,000円／当日参加登録 6,000円</dd></div>
+      <div class="ov-row"><dt>参加費</dt><dd>事前参加登録 5,000円／当日参加登録 6,000円<br><span style="font-size:.86rem;">事前参加登録の締切：2026年11月12日（木）（ご登録・お振込とも）。お振込が確認できない場合は当日受付となります。<a href="#regist-block" style="color:var(--teal-deep);font-weight:700;">〔事前参加登録〕</a></span></dd></div>
     </dl>
   </div>
 </section>
@@ -665,17 +689,13 @@
       <dl class="ov-table" style="margin-bottom:20px;">
         <div class="ov-row"><dt>チラシ・ポスター</dt><dd>会場でのチラシ配布・ポスター掲示は予定しておりません。</dd></div>
         <div class="ov-row"><dt>抄録集への掲載</dt><dd>抄録集の準備の都合上、<strong style="color:var(--ink);">受付を終了いたしました</strong>。</dd></div>
-        <div class="ov-row"><dt>幕間スライド</dt><dd><strong style="color:var(--ink);">受け付けております。</strong>セッションの合間に会場スクリーンで上映いたします。</dd></div>
+        <div class="ov-row"><dt>幕間スライド</dt><dd><strong style="color:var(--ink);">受付を終了いたしました。</strong>お申し込みいただいたスライドは、セッションの合間に会場スクリーンで上映いたします。</dd></div>
       </dl>
-      <div class="deadline">
-        <span class="dl-lbl">幕間スライド 締切</span>
-        <span class="dl-date mincho">2026年11月7日（土）</span>
+      <div class="deadline" style="margin-bottom:0;">
+        <span class="dl-lbl">幕間スライド</span>
+        <span class="dl-date mincho">受付終了</span>
+        <span class="dl-closed">11月7日（土）で締め切りました</span>
       </div>
-      <p class="receipt-note" style="margin-top:0;">
-        <strong>形式：</strong>16:9・1枚、PDF形式<br>
-        <strong>送付先：</strong>第130回九州・沖縄形成外科学会事務局（<a href="mailto:mokkox2@yahoo.co.jp" style="color:var(--teal-deep);font-weight:700;">mokkox2@yahoo.co.jp</a>）<br>
-        メールの件名に「幕間スライド」と学会・研究会名をご記載ください。準備の都合上、締切後のお申し込みはお受けできませんので、ご了承ください。
-      </p>
     </div>
   </div>
 </section>
