@@ -167,6 +167,50 @@
   .prog-item .tag{font-family:"Shippori Mincho B1",serif;font-size:.78rem;letter-spacing:.14em;color:#fff;background:var(--teal);padding:5px 12px;border-radius:2px;white-space:nowrap;margin-top:4px;}
   .prog-item h3{font-family:"Shippori Mincho B1",serif;font-size:1.2rem;margin-bottom:4px;}
   .prog-item p{font-size:.9rem;color:var(--ink-soft);}
+  .prog-item .when{display:inline-block;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.95rem;color:var(--teal-deep);margin-bottom:10px;letter-spacing:.04em;}
+  .prog-item .meta{font-size:.9rem;color:var(--ink-soft);margin-bottom:8px;}
+  .prog-item .meta:last-child{margin-bottom:0;}
+  .prog-item .meta strong{color:var(--ink);}
+  .tag.tag-gen{background:var(--ink-soft);}
+  .tag.tag-sym{background:var(--teal);}
+  .tag.tag-sp{background:var(--amber);}
+  .prog-subhead{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.25rem;color:var(--ink);margin:44px 0 14px;}
+  .prog-subhead:first-of-type{margin-top:0;}
+  .prog-note{font-size:.84rem;color:var(--ink-soft);margin:-4px 0 16px;line-height:1.8;}
+  .prog-pdf{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:16px 20px;margin-top:20px;font-size:.88rem;color:var(--ink-soft);line-height:1.7;}
+  .prog-pdf a{white-space:nowrap;}
+  /* schedule table */
+  .sched{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;font-size:.9rem;}
+  .sched caption{caption-side:top;text-align:left;font-size:.84rem;color:var(--ink-soft);padding:0 0 10px;}
+  .sched th,.sched td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  .sched thead th{background:var(--ink);color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.12em;}
+  .sched tbody tr:last-child td,.sched tbody tr:last-child th{border-bottom:0;}
+  .sched .t{font-family:"Shippori Mincho B1",serif;font-weight:700;white-space:nowrap;color:var(--ink);width:9.5em;}
+  .sched .c{color:var(--ink);font-weight:500;}
+  .sched .c small{display:block;font-size:.8rem;color:var(--ink-soft);font-weight:400;margin-top:2px;}
+  .sched .r{color:var(--ink-soft);}
+  .sched tr.main td,.sched tr.main th{background:#EEF6F5;}
+  .sched tr.main .c{font-weight:700;}
+  .sched tr.pre td,.sched tr.pre th{background:#F7F8FA;}
+  .sched tr.brk td,.sched tr.brk th{background:#FAFBFC;color:var(--ink-soft);font-size:.82rem;padding-top:7px;padding-bottom:7px;}
+  .sched tr.brk .t,.sched tr.brk .c{color:var(--ink-soft);font-weight:400;}
+  .sched .lbl{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.06em;color:#fff;border-radius:2px;padding:1px 7px;margin-right:6px;vertical-align:2px;}
+  .sched .lbl.gen{background:var(--ink-soft);}
+  .sched .lbl.sym{background:var(--teal);}
+  .sched .lbl.sp{background:var(--amber);}
+  @media(max-width:640px){
+    .sched thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+    .sched,.sched tbody,.sched tr,.sched th,.sched td{display:block;width:100%;}
+    .sched tr{border-bottom:1px solid var(--line);padding:10px 14px;}
+    .sched tbody tr:last-child{border-bottom:0;}
+    .sched th,.sched td{border:0;padding:0;}
+    .sched .t{width:auto;font-size:.88rem;color:var(--teal-deep);}
+    .sched tr.brk .t{display:inline;}
+    .sched tr.brk .c{display:inline;margin-left:8px;}
+    .sched tr.brk .r{display:none;}
+    .sched .r:not(:empty){margin-top:2px;font-size:.84rem;}
+    .sched tr.brk{padding-top:6px;padding-bottom:6px;}
+  }
 
   /* access */
   .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;}
@@ -252,6 +296,7 @@
     <div class="news">
       <div class="news-title"><span>NEWS</span><h2>お知らせ</h2></div>
       <ul>
+        <li><time datetime="2026-11-08">2026.11.08</time><div><span class="tag-new">NEW</span><a href="#program">プログラム</a>に当日の<strong>日程表</strong>を掲載し、各セッションのご案内を時間順に更新しました。</div></li>
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月12日（木）まで再延長</a>しました。お振込も<strong>11月12日（木）まで</strong>にお願いいたします。<strong>お振込が確認できない場合は、当日受付（当日参加費6,000円）</strong>となりますのでご注意ください。</div></li>
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#qa-trainee">初期研修医・医学生の方のご参加</a>について、Q&amp;Aに掲載しました（日本形成外科学会への入会は不要です）。</div></li>
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#ads">他学会・研究会の幕間スライド</a>の受付を終了しました。</div></li>
@@ -489,12 +534,46 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Program</span><h2>プログラム</h2>
-      <p class="lead">「外科教育」をテーマに、特別講演・シンポジウム・一般演題を予定しております。</p>
+      <p class="lead">プログラムが確定いたしました。「外科教育」をテーマに、一般演題22題、シンポジウム、特別講演を行います。各演題の演題名・抄録は<a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener" style="color:var(--teal-deep);font-weight:700;">プログラム・抄録集（PDF）</a>をご覧ください。</p>
     </div>
+
+    <h3 class="prog-subhead">日程表</h3>
+    <p class="prog-note">2026年11月14日（土）　会場：聖マリア病院 研究センター1階 使徒ヨハネ 井手一郎ホール</p>
+    <table class="sched">
+      <thead>
+        <tr><th scope="col">時 間</th><th scope="col">内 容</th><th scope="col">座長・演者／場所</th></tr>
+      </thead>
+      <tbody>
+        <tr class="pre"><th scope="row" class="t">11:30〜12:20</th><td class="c">世話人会</td><td class="r">研究センター3階 大会議室</td></tr>
+        <tr class="pre"><th scope="row" class="t">12:00〜</th><td class="c">受付開始・企業展示<small>企業展示は研究センター1階ホールにて17:00まで</small></td><td class="r">井手一郎ホール前</td></tr>
+        <tr class="brk"><th scope="row" class="t">12:00〜12:25</th><td class="c">プロモーションビデオ上映</td><td class="r"></td></tr>
+        <tr><th scope="row" class="t">12:25〜12:30</th><td class="c">開会挨拶</td><td class="r">会長 林 稔</td></tr>
+        <tr class="main"><th scope="row" class="t">12:30〜13:26</th><td class="c"><span class="lbl gen">一般演題</span>第1セッション（演題1〜7）<small>先天異常・顔面・脈管奇形</small></td><td class="r">座長：吉田 大作 先生（長崎大学病院 形成外科）</td></tr>
+        <tr class="brk"><th scope="row" class="t">13:26〜13:40</th><td class="c">休憩（プロモーションビデオ上映）</td><td class="r"></td></tr>
+        <tr class="main"><th scope="row" class="t">13:40〜14:36</th><td class="c"><span class="lbl gen">一般演題</span>第2セッション（演題8〜14）<small>皮膚腫瘍・瘢痕・難治性創傷</small></td><td class="r">座長：岩本 直朗 先生（大分大学医学部附属病院 形成外科）</td></tr>
+        <tr class="brk"><th scope="row" class="t">14:36〜14:50</th><td class="c">休憩（プロモーションビデオ上映）</td><td class="r"></td></tr>
+        <tr class="main"><th scope="row" class="t">14:50〜15:54</th><td class="c"><span class="lbl gen">一般演題</span>第3セッション（演題15〜22）<small>感染・外傷・再建</small></td><td class="r">座長：猪原 康司 先生（鹿児島市立病院 形成外科）</td></tr>
+        <tr class="brk"><th scope="row" class="t">15:54〜16:00</th><td class="c">休憩（プロモーションビデオ上映）</td><td class="r"></td></tr>
+        <tr class="main"><th scope="row" class="t">16:00〜16:50</th><td class="c"><span class="lbl sym">シンポジウム</span>外科教育</td><td class="r">座長：加藤 基 先生（鹿児島大学 形成外科）</td></tr>
+        <tr class="main"><th scope="row" class="t">16:55〜17:55</th><td class="c"><span class="lbl sp">特別講演</span>門松 香一 先生（昭和医科大学 形成外科 主任教授）</td><td class="r">座長：上村 哲司 先生（純真学園大学 保健医療学部 医療工学科）</td></tr>
+        <tr><th scope="row" class="t">17:55〜18:00</th><td class="c">閉会挨拶</td><td class="r">会長 林 稔</td></tr>
+        <tr class="pre"><th scope="row" class="t">18:30〜</th><td class="c">懇親会<small>研究センター前からマイクロバスで移動します</small></td><td class="r">ハイネスホテル久留米 <a href="#banquet" style="color:var(--teal-deep);font-weight:700;">〔懇親会のご案内〕</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="prog-subhead">各セッションのご案内</h3>
+    <p class="prog-note">時間順に掲載しています。一般演題は発表5分・討論3分です。</p>
     <div class="prog-list">
-      <div class="prog-item"><span class="tag">特別講演</span><div><h3>特別講演</h3><p style="margin-bottom:8px;">演題：「我々が行ってきた口唇口蓋裂治療と美容外科医療の現状と将来展望」</p><p style="margin-bottom:8px;"><strong style="color:var(--ink);">座長</strong><br>上村 哲司 先生（純真学園大学 保健医療学部 医療工学科）</p><p><strong style="color:var(--ink);">演者</strong><br>門松 香一 先生（昭和医科大学 形成外科主任教授／日本形成外科学会理事）</p></div></div>
-      <div class="prog-item"><span class="tag">シンポジウム</span><div><h3>シンポジウム</h3><p style="margin-bottom:8px;">テーマ：外科教育</p><p style="margin-bottom:8px;"><strong style="color:var(--ink);">座長</strong><br>加藤 基 先生（鹿児島大学 形成外科 准教授・診療科長）</p><p><strong style="color:var(--ink);">演者</strong><br>鈴木 翔太郎 先生（福岡大学 形成外科）<br>遠藤 淑恵 先生（産業医科大学病院 形成外科）<br>林 稔（聖マリア病院 形成外科）</p></div></div>
-      <div class="prog-item"><span class="tag">一般演題</span><div><h3>一般演題</h3><p>会員の皆様による一般口演。今後の形成外科の発展につながる活発なご議論を期待しております。</p></div></div>
+      <div class="prog-item"><span class="tag tag-gen">一般演題</span><div><span class="when">12:30〜13:26</span><h3>第1セッション：先天異常・顔面・脈管奇形</h3><p class="meta"><strong>座長</strong>　吉田 大作 先生（長崎大学病院 形成外科）</p><p class="meta"><strong>演題</strong>　演題1〜7（7題）</p></div></div>
+      <div class="prog-item"><span class="tag tag-gen">一般演題</span><div><span class="when">13:40〜14:36</span><h3>第2セッション：皮膚腫瘍・瘢痕・難治性創傷</h3><p class="meta"><strong>座長</strong>　岩本 直朗 先生（大分大学医学部附属病院 形成外科）</p><p class="meta"><strong>演題</strong>　演題8〜14（7題）</p></div></div>
+      <div class="prog-item"><span class="tag tag-gen">一般演題</span><div><span class="when">14:50〜15:54</span><h3>第3セッション：感染・外傷・再建</h3><p class="meta"><strong>座長</strong>　猪原 康司 先生（鹿児島市立病院 形成外科）</p><p class="meta"><strong>演題</strong>　演題15〜22（8題）</p></div></div>
+      <div class="prog-item"><span class="tag tag-sym">シンポジウム</span><div><span class="when">16:00〜16:50</span><h3>シンポジウム「外科教育」</h3><p class="meta"><strong>座長</strong>　加藤 基 先生（鹿児島大学 形成外科）</p><p class="meta"><strong>シンポジスト</strong><br>鈴木 翔太郎 先生（福岡大学 形成外科）<br>遠藤 淑恵 先生（産業医科大学病院 形成外科）<br>林 稔（聖マリア病院 形成外科）</p><p class="meta">各演者10分のご発表の後、総合討論を行います。</p></div></div>
+      <div class="prog-item"><span class="tag tag-sp">特別講演</span><div><span class="when">16:55〜17:55</span><h3>特別講演</h3><p class="meta"><strong>演題</strong>　「我々が行ってきた口唇口蓋裂治療と美容外科医療の現状と将来展望」</p><p class="meta"><strong>座長</strong>　上村 哲司 先生（純真学園大学 保健医療学部 医療工学科）</p><p class="meta"><strong>演者</strong>　門松 香一 先生（昭和医科大学 形成外科 主任教授／日本形成外科学会 理事）</p></div></div>
+    </div>
+
+    <div class="prog-pdf">
+      <span>演題名・演者・抄録は、プログラム・抄録集でご確認いただけます。</span>
+      <a class="btn btn-primary" href="program_abstracts.pdf?v=21" target="_blank" rel="noopener" style="text-decoration:none;padding:11px 20px;font-size:.9rem;">プログラム・抄録集（PDF）→</a>
     </div>
   </div>
 </section>
