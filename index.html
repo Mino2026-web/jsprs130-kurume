@@ -94,6 +94,14 @@
   .news li:first-child{border-top:0;}
   .news time{font-family:"Shippori Mincho B1",serif;font-weight:700;color:var(--ink-soft);}
   .news a{color:var(--teal-deep);font-weight:700;}
+  .news-past{margin-top:6px;border-top:1px solid var(--line);padding-top:12px;}
+  .news-past-lbl{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:.9rem;color:var(--ink-soft);margin-bottom:8px;}
+  .news-past-lbl span{font-family:inherit;font-weight:400;font-size:.76rem;margin-left:6px;}
+  .news .news-past-list{max-height:190px;overflow-y:scroll;border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:0 14px;scrollbar-width:thin;scrollbar-color:#B8C2D2 transparent;}
+  .news .news-past-list::-webkit-scrollbar{width:8px;}
+  .news .news-past-list::-webkit-scrollbar-thumb{background:#B8C2D2;border-radius:4px;}
+  .news .news-past-list li{font-size:.84rem;padding:9px 0;grid-template-columns:96px 1fr;}
+  .news .news-past-list:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
   .news .tag-new{display:inline-block;font-size:.68rem;font-weight:700;color:#fff;background:var(--amber);border-radius:2px;padding:1px 7px;margin-right:6px;vertical-align:1px;}
   .imp{background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid var(--amber);border-radius:6px;padding:20px 24px;margin-bottom:24px;}
   .imp-title{font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.08rem;color:var(--ink);margin-bottom:10px;}
@@ -114,7 +122,7 @@
   .pay-alert strong{color:#8A3D06;}
   .pay-alert .pa-hl{background:linear-gradient(transparent 60%,#FDE68A 60%);font-weight:700;}
   .btn-note{font-size:.84rem;color:#8A3D06;font-weight:700;margin-top:12px;line-height:1.7;}
-  @media (max-width:600px){.news{padding:20px 18px;}.news li{grid-template-columns:1fr;gap:2px;}.deadline{flex-wrap:wrap;}}
+  @media (max-width:600px){.news{padding:20px 18px;}.news li,.news .news-past-list li{grid-template-columns:1fr;gap:2px;}.news .news-past-list{max-height:230px;}.deadline{flex-wrap:wrap;}}
 
   /* form */
   .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;}
@@ -323,6 +331,10 @@
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月12日（木）まで再延長</a>しました。お振込も<strong>11月12日（木）まで</strong>にお願いいたします。<strong>お振込が確認できない場合は、当日受付（当日参加費6,000円）</strong>となりますのでご注意ください。</div></li>
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#qa-trainee">初期研修医・医学生の方のご参加</a>について、Q&amp;Aに掲載しました（日本形成外科学会への入会は不要です）。</div></li>
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#ads">他学会・研究会の幕間スライド</a>の受付を終了しました。</div></li>
+      </ul>
+      <div class="news-past">
+        <div class="news-past-lbl">過去のお知らせ<span>（スクロールしてご覧いただけます）</span></div>
+        <ul class="news-past-list" tabindex="0" aria-label="過去のお知らせ">
         <li><time datetime="2026-11-06">2026.11.06</time><div><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>の<strong>確定版</strong>を掲載しました（特別講演の演題名を追加）。</div></li>
         <li><time datetime="2026-11-05">2026.11.05</time><div><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>を更新しました（表記の一部修正）。</div></li>
         <li><time datetime="2026-11-02">2026.11.02</time><div><a href="#onsite-block">当日受付のご案内</a>を更新しました。参加証は<strong>印刷またはPDF画面のご提示</strong>で受付いたします（名札のご用意はございません）。</div></li>
@@ -331,7 +343,8 @@
         <li><time datetime="2026-11-01">2026.11.01</time><div><a href="#regist-block">事前参加登録の締切を11月7日（土）まで延長</a>しました。お振込は11月12日（木）までにお願いいたします。</div></li>
         <li><time datetime="2026-11-01">2026.11.01</time><div><a href="#onsite-block">当日受付のご案内</a>を掲載しました（受付開始 12:00／現金のみ）。</div></li>
         <li><time datetime="2026-11-01">2026.11.01</time><div><a href="#ads">広告・広報物の取り扱い</a>について掲載しました（企業様の広告受付は終了しました）。</div></li>
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
