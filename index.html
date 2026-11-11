@@ -234,6 +234,27 @@
     .hero-inner{padding:56px 24px 52px;}
     .reg-block{padding:28px 22px;}
   }
+  /* スタンプラリー・会場設備 */
+  .rally{border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:6px;background:#fff;padding:22px 24px;margin-bottom:22px;scroll-margin-top:80px;}
+  .rally-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px;}
+  .rally-head .ck-lbl{margin:0;}
+  .rally-head h4{font-family:"Shippori Mincho B1",serif;font-size:1.2rem;color:var(--ink);margin:0;}
+  .rally-lead{font-size:.9rem;color:var(--ink-soft);line-height:1.8;margin:0 0 16px;}
+  .rally-steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;counter-reset:rs;margin:0 0 14px;padding:0;}
+  .rally-steps li{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px 14px 14px;font-size:.86rem;color:var(--ink-soft);line-height:1.7;counter-increment:rs;}
+  .rally-steps li::before{content:"STEP " counter(rs);display:block;font-size:.7rem;letter-spacing:.16em;font-weight:700;color:var(--teal);margin-bottom:4px;}
+  .rally-steps li strong{display:block;font-family:"Shippori Mincho B1",serif;font-size:1rem;color:var(--ink);margin-bottom:4px;}
+  .rally-steps li.goal{background:#FFFBEB;border-color:#FDE68A;}
+  .rally-steps li.goal::before{content:"GOAL";color:var(--amber);}
+  .rally-note{font-size:.82rem;color:var(--ink-soft);line-height:1.75;padding-top:10px;border-top:1px dashed var(--line);}
+  .rally-note strong{color:var(--ink);}
+  .venue-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px;}
+  .vf{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:6px;padding:16px 18px;}
+  .vf .vf-lbl{display:block;font-size:.72rem;letter-spacing:.16em;font-weight:700;color:var(--teal);margin-bottom:4px;}
+  .vf .vf-val{display:block;font-family:"Shippori Mincho B1",serif;font-weight:700;font-size:1.35rem;color:var(--ink);line-height:1.4;}
+  .vf .vf-sub{display:block;font-size:.82rem;color:var(--ink-soft);line-height:1.7;margin-top:4px;}
+  @media(max-width:820px){.rally-steps{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.rally-steps,.venue-facts{grid-template-columns:1fr;}.rally{padding:18px 16px;}}
   @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;}}
   a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:2px;}
 </style>
@@ -296,6 +317,8 @@
     <div class="news">
       <div class="news-title"><span>NEWS</span><h2>お知らせ</h2></div>
       <ul>
+        <li><time datetime="2026-11-11">2026.11.11</time><div><span class="tag-new">NEW</span>企業展示会場で<a href="#stamp-rally"><strong>スタンプラリー</strong></a>を開催いたします。協賛企業様のブースをすべて回ってサインを集めた方に、受付で<strong>お飲み物（1本）</strong>をお渡しします（17:00まで）。</div></li>
+        <li><time datetime="2026-11-11">2026.11.11</time><div><span class="tag-new">NEW</span><a href="#venue-info">会場のご案内</a>を掲載しました。会場は<strong>230席</strong>で、各席に<strong>小机と電源（コンセント）</strong>がございます。</div></li>
         <li><time datetime="2026-11-08">2026.11.08</time><div><span class="tag-new">NEW</span><a href="#program">プログラム</a>に当日の<strong>日程表</strong>を掲載し、各セッションのご案内を時間順に更新しました。</div></li>
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月12日（木）まで再延長</a>しました。お振込も<strong>11月12日（木）まで</strong>にお願いいたします。<strong>お振込が確認できない場合は、当日受付（当日参加費6,000円）</strong>となりますのでご注意ください。</div></li>
         <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#qa-trainee">初期研修医・医学生の方のご参加</a>について、Q&amp;Aに掲載しました（日本形成外科学会への入会は不要です）。</div></li>
@@ -456,6 +479,23 @@
         </div>
       </div>
 
+
+      <div class="rally" id="stamp-rally">
+        <div class="rally-head"><span class="ck-lbl">STAMP RALLY</span><h4>企業展示スタンプラリーのご案内</h4></div>
+        <p class="rally-lead">学会当日、研究センター1階の企業展示会場でスタンプラリーを開催いたします。協賛企業様のブースをすべて回られた方に、受付でお飲み物をお渡しします。ぜひご参加ください。</p>
+        <ol class="rally-steps">
+          <li><strong>参加受付</strong>受付で名簿によるご参加の確認後、<strong style="display:inline;font-family:inherit;font-size:inherit;">スタンプラリーカード</strong>をお渡しします。</li>
+          <li><strong>企業ブースを巡る</strong>企業展示会場の協賛企業様のブースを回ります。</li>
+          <li><strong>サインを集める</strong>各企業様のブースで、カードにサインをいただきます。</li>
+          <li class="goal"><strong>受付でお飲み物</strong>全企業様のサインがそろったカードを受付でご提示ください。お飲み物を1本お渡しします。</li>
+        </ol>
+        <div class="rally-note">
+          ※ お飲み物のお引き換えは、企業展示終了の<strong>17:00まで</strong>です。お一人様1本とさせていただきます。<br>
+          ※ <strong>ホール内は飲食禁止</strong>です。お飲み物はホールの外でお召し上がりください。<br>
+          ※ 当日受付の方にも、受付のお手続きの際にカードをお渡しいたします。
+        </div>
+      </div>
+
       <dl class="ov-table" style="margin-bottom:20px;">
         <div class="ov-row"><dt>受付開始</dt><dd>2026年11月14日（土）12:00〜（プログラム・抄録集の日程表のとおり）<br>開会は12:25、第1セッションは12:30開始です。受付の混雑を避けるため、<strong style="color:var(--ink);">12:00〜12:20のご来場</strong>にご協力をお願いいたします。</dd></div>
         <div class="ov-row"><dt>場 所</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール前</dd></div>
@@ -522,7 +562,7 @@
       <div class="ov-row"><dt>大会名</dt><dd>第130回 九州・沖縄形成外科学会学術集会</dd></div>
       <div class="ov-row"><dt>テーマ</dt><dd>外科教育</dd></div>
       <div class="ov-row"><dt>会 期</dt><dd>2026年11月14日（土）</dd></div>
-      <div class="ov-row"><dt>会 場</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール（現地開催のみ）</dd></div>
+      <div class="ov-row"><dt>会 場</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール（現地開催のみ）<br><span style="font-size:.86rem;">230席（各席に小机・電源コンセントあり）<a href="#venue-info" style="color:var(--teal-deep);font-weight:700;">〔会場のご案内〕</a></span></dd></div>
       <div class="ov-row"><dt>会 長</dt><dd>林 稔（聖マリア病院 形成外科診療部長）</dd></div>
       <div class="ov-row"><dt>参加費</dt><dd>事前参加登録 5,000円／当日参加登録 6,000円<br><span style="font-size:.86rem;">事前参加登録の締切：2026年11月12日（木）（ご登録・お振込とも）。お振込が確認できない場合は当日受付となります。<a href="#regist-block" style="color:var(--teal-deep);font-weight:700;">〔事前参加登録〕</a><br>初期研修医・医学生の方は、日本形成外科学会への入会は不要です（参加費は同額です）。<a href="#qa-trainee" style="color:var(--teal-deep);font-weight:700;">〔Q&amp;A〕</a></span></dd></div>
     </dl>
@@ -545,7 +585,7 @@
       </thead>
       <tbody>
         <tr class="pre"><th scope="row" class="t">11:30〜12:20</th><td class="c">世話人会</td><td class="r">研究センター3階 大会議室</td></tr>
-        <tr class="pre"><th scope="row" class="t">12:00〜</th><td class="c">受付開始・企業展示<small>企業展示は研究センター1階ホールにて17:00まで</small></td><td class="r">井手一郎ホール前</td></tr>
+        <tr class="pre"><th scope="row" class="t">12:00〜</th><td class="c">受付開始・企業展示<small>企業展示は研究センター1階ホールにて17:00まで／<a href="#stamp-rally" style="color:var(--teal-deep);font-weight:700;">スタンプラリー</a>開催（お飲み物の引き換えは17:00まで）</small></td><td class="r">井手一郎ホール前</td></tr>
         <tr class="brk"><th scope="row" class="t">12:00〜12:25</th><td class="c">プロモーションビデオ上映</td><td class="r"></td></tr>
         <tr><th scope="row" class="t">12:25〜12:30</th><td class="c">開会挨拶</td><td class="r">会長 林 稔</td></tr>
         <tr class="main"><th scope="row" class="t">12:30〜13:26</th><td class="c"><span class="lbl gen">一般演題</span>第1セッション（演題1〜7）<small>先天異常・顔面・脈管奇形</small></td><td class="r">座長：吉田 大作 先生（長崎大学病院 形成外科）</td></tr>
@@ -697,6 +737,19 @@
       </div>
     </div>
 
+
+    <div class="mincho" id="venue-info" style="font-weight:700;font-size:1.2rem;color:var(--ink);margin:40px 0 14px;scroll-margin-top:80px;">会場のご案内</div>
+    <div class="venue-facts">
+      <div class="vf"><span class="vf-lbl">SEATS</span><span class="vf-val">230席</span><span class="vf-sub">使徒ヨハネ 井手一郎ホールに230席をご用意しております。</span></div>
+      <div class="vf"><span class="vf-lbl">DESK</span><span class="vf-val">各席に小机</span><span class="vf-sub">抄録集を広げたり、メモをとったりしながらご聴講いただけます。</span></div>
+      <div class="vf"><span class="vf-lbl">POWER</span><span class="vf-val">各席に電源</span><span class="vf-sub">AC100Vコンセントです。ノートPC・スマートフォン等の充電にご利用ください。</span></div>
+    </div>
+    <dl class="ov-table" style="margin-bottom:20px;">
+      <div class="ov-row"><dt>電源のご利用</dt><dd>各席にコンセントがございます。<strong style="color:var(--ink);">充電器・ACアダプター・ケーブル類はご持参ください</strong>（会場での貸し出しはございません）。</dd></div>
+      <div class="ov-row"><dt>ホール内の飲食</dt><dd><strong style="color:var(--ink);">ホール内は飲食禁止です。</strong>お飲み物は、ホールの外でお召し上がりください。</dd></div>
+      <div class="ov-row"><dt>企業展示</dt><dd>研究センター1階ホールにて12:00〜17:00。<a href="#stamp-rally" style="color:var(--teal-deep);font-weight:700;">スタンプラリー</a>を開催いたします。</dd></div>
+    </dl>
+
     <div class="mincho" style="font-weight:700;font-size:1.2rem;color:var(--ink);margin:40px 0 14px;">交通のご案内</div>
     <dl class="ov-table" style="margin-bottom:20px;">
       <div class="ov-row"><dt>電 車</dt><dd>西鉄天神大牟田線「聖マリア病院前」駅から徒歩約5分<br>西鉄久留米駅からタクシー約6分／JR久留米駅からタクシー約10分<br><span style="font-size:.84rem;">（西鉄福岡（天神）駅から西鉄久留米駅まで特急約30分、JR博多駅からJR久留米駅まで快速約40分）</span></dd></div>
@@ -721,7 +774,7 @@
     <div class="sec-head">
       <span class="eyebrow">For Exhibitors</span>
       <h2>展示協賛をいただく企業様へ</h2>
-      <p class="lead">このたびは展示協賛を賜り、誠にありがとうございます。搬入・準備のご案内と、お問い合わせへの回答を掲載いたします。</p>
+      <p class="lead">このたびは展示協賛を賜り、誠にありがとうございます。搬入・準備のご案内、スタンプラリーへのご協力のお願い、お問い合わせへの回答を掲載いたします。</p>
     </div>
 
     <div class="reg-block">
@@ -734,6 +787,20 @@
         <div class="ov-row"><dt>搬 入</dt><dd>2026年11月13日（金）13:00〜16:00</dd></div>
         <div class="ov-row"><dt>準 備</dt><dd>2026年11月14日（土）9:00より展示会場を開放いたします。設営のご準備をお願いいたします。</dd></div>
       </dl>
+    </div>
+
+    <div class="reg-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── スタンプラリー</span>
+        <h3>スタンプラリーへのご協力のお願い</h3>
+      </div>
+      <p class="rb-desc">学会当日、企業展示会場でスタンプラリーを開催いたします。参加者の皆様には受付で<strong style="color:var(--ink);">スタンプラリーカード</strong>をお渡しし、協賛企業様のブースをすべて回っていただきます。</p>
+      <dl class="ov-table" style="margin-bottom:20px;">
+        <div class="ov-row"><dt>お願い</dt><dd>参加者がブースにお立ち寄りの際は、<strong style="color:var(--ink);">カードの貴社欄にサインをお願いいたします</strong>（貴社名またはご担当者様のお名前で結構です）。</dd></div>
+        <div class="ov-row"><dt>実施時間</dt><dd>2026年11月14日（土）12:00〜17:00（企業展示の時間内）</dd></div>
+        <div class="ov-row"><dt>達成者の特典</dt><dd>全企業様のサインがそろった方には、受付でお飲み物を1本お渡しいたします（事務局にてご用意いたします）。</dd></div>
+      </dl>
+      <p class="rb-desc" style="margin:0;">多くの参加者が各ブースを訪れるきっかけとなれば幸いです。ご協力のほど、よろしくお願い申し上げます。</p>
     </div>
 
     <div class="reg-block">
