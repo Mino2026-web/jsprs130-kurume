@@ -33,6 +33,7 @@
   .nav-links a:hover{color:var(--teal);}
   .nav-cta{background:var(--teal);color:#fff;padding:9px 18px;border-radius:2px;text-decoration:none;font-weight:700;font-size:.84rem;}
   .nav-cta:hover{background:var(--teal-deep);}
+  .nav-links a.nav-cta,.nav-links a.nav-cta:hover{color:#fff;}
   .menu-btn{display:none;background:none;border:0;font-size:1.5rem;color:var(--ink);cursor:pointer;}
 
   .hero{background:radial-gradient(120% 90% at 85% -10%, rgba(15,118,110,.35), transparent 55%),var(--ink);color:var(--paper);position:relative;overflow:hidden;}
@@ -62,6 +63,11 @@
   .cta-abstract:hover{background:var(--teal-deep);}
   .cta-regist{background:var(--paper);color:var(--ink);}
   .cta-regist:hover{background:#fff;}
+  .cta-onsite{background:var(--teal);color:#fff;}
+  .cta-onsite:hover{background:var(--teal-deep);}
+  .cta-pdf{background:var(--paper);color:var(--ink);}
+  .cta-pdf:hover{background:#fff;}
+  .cta .sub b{font-weight:700;opacity:1;}
 
   section{padding:78px 0;}
   .sec-head{margin-bottom:40px;}
@@ -71,6 +77,7 @@
   /* registration blocks */
   .reg-block{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:36px 34px;box-shadow:var(--shadow);margin-bottom:28px;}
   .reg-block:last-child{margin-bottom:0;}
+  .reg-block[id]{scroll-margin-top:80px;}
   .rb-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px;}
   .rb-no{font-family:"Shippori Mincho B1",serif;color:var(--teal);font-size:.9rem;letter-spacing:.2em;}
   .rb-head h3{font-family:"Shippori Mincho B1",serif;font-size:1.6rem;}
@@ -263,6 +270,7 @@
   .vf .vf-sub{display:block;font-size:.82rem;color:var(--ink-soft);line-height:1.7;margin-top:4px;}
   @media(max-width:820px){.rally-steps{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:600px){.rally-steps,.venue-facts{grid-template-columns:1fr;}.rally{padding:18px 16px;}}
+  @media(max-width:600px){.ov-row{grid-template-columns:1fr;}.ov-row dt{padding:9px 16px;font-size:.86rem;}.ov-row dd{padding:12px 16px 14px;}.ov-row dt br{display:none;}}
   @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;}}
   a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:2px;border-radius:2px;}
 </style>
@@ -277,13 +285,13 @@
       <small>THE 130TH KYUSHU-OKINAWA SOCIETY OF PLASTIC AND RECONSTRUCTIVE SURGERY</small>
     </div>
     <nav class="nav-links" id="navlinks" aria-label="メインナビゲーション">
-      <a href="#overview">開催概要</a>
-      <a href="#registration">各種登録</a>
       <a href="#program">プログラム</a>
-      <a href="#banquet">懇親会</a>
-      <a href="#qa">Q&amp;A</a>
       <a href="#access">アクセス</a>
-      <a href="#registration" class="nav-cta">参加登録</a>
+      <a href="#banquet">懇親会</a>
+      <a href="#speakers">演者の方へ</a>
+      <a href="#qa">Q&amp;A</a>
+      <a href="#overview">開催概要</a>
+      <a href="#onsite" class="nav-cta">当日受付</a>
     </nav>
     <button class="menu-btn" aria-label="メニュー" onclick="var n=document.getElementById('navlinks');n.style.display=(getComputedStyle(n).display==='none'?'flex':'none')">☰</button>
   </div>
@@ -304,16 +312,15 @@
     </div>
 
     <div class="cta-row">
-      <a class="cta cta-abstract" href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">
-        <span class="kicker">ABSTRACT SUBMISSION</span>
-        <span class="main"><span><s style="text-decoration-thickness:2px;opacity:.75;">演題登録</s> <span style="font-size:1.05rem;">受付終了</span></span> <span class="arrow">→</span></span>
-        <span class="sub">確定版のプログラム・抄録集はこちら（PDF）</span>
+      <a class="cta cta-onsite" href="#onsite">
+        <span class="kicker">ON-SITE REGISTRATION</span>
+        <span class="main">当日受付のご案内 <span class="arrow">→</span></span>
+        <span class="sub">受付開始 <b>12:00</b>／研究センター1階 井手一郎ホール前<br>参加証（PDF）をご提示ください。当日参加費 6,000円（現金のみ）</span>
       </a>
-      <a class="cta cta-regist" href="#regist-block">
-        <span class="kicker">REGISTRATION</span>
-        <span class="main">事前参加登録 <span class="arrow">→</span></span>
-        <span class="sub">締切：2026年11月12日（木）※再延長しました<br>事前 5,000円／当日 6,000円</span>
-        <span class="warn">⚠ ご登録とお振込の両方を11月12日（木）までにお済ませください。お振込が確認できない場合は当日受付（6,000円）となります。</span>
+      <a class="cta cta-pdf" href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">
+        <span class="kicker">PROGRAM &amp; ABSTRACTS</span>
+        <span class="main">プログラム・抄録集 <span class="arrow">→</span></span>
+        <span class="sub">確定版（PDF）はこちら<br>当日の日程表は、本ページの〔プログラム〕にも掲載しています</span>
       </a>
     </div>
   </div>
@@ -325,17 +332,19 @@
     <div class="news">
       <div class="news-title"><span>NEWS</span><h2>お知らせ</h2></div>
       <ul>
+        <li><time datetime="2026-11-13">2026.11.13</time><div><span class="tag-new">NEW</span><a href="#registration">事前参加登録</a>の受付を締め切りました。たくさんのご登録をいただき、誠にありがとうございました。これからご参加の方は、<a href="#onsite">当日受付</a>にてお手続きください（当日参加費 <strong>6,000円・現金のみ</strong>）。</div></li>
+        <li><time datetime="2026-11-13">2026.11.13</time><div><span class="tag-new">NEW</span><a href="#banquet">懇親会</a>は、<strong>事前のお申し込みがない方もご参加いただけます</strong>（会費無料）。学術集会終了後、研究センター前から送迎バスにご乗車ください。</div></li>
         <li><time datetime="2026-11-12">2026.11.12</time><div><span class="tag-new">NEW</span>展示協賛企業様へ、<a href="#qa-return">展示品の撤収と返送</a>についてのご案内を掲載しました（<strong>11月14日（土）18:00までに撤収</strong>、返送の集荷は各社様でご手配ください）。</div></li>
         <li><time datetime="2026-11-11">2026.11.11</time><div><span class="tag-new">NEW</span>企業展示会場で<a href="#stamp-rally"><strong>スタンプラリー</strong></a>を開催いたします。協賛企業様のブースをすべて回ってサインを集めた方に、受付で<strong>お飲み物（1本）</strong>をお渡しします（17:00まで）。</div></li>
         <li><time datetime="2026-11-11">2026.11.11</time><div><span class="tag-new">NEW</span><a href="#venue-info">会場のご案内</a>を掲載しました。会場は<strong>230席</strong>で、各席に<strong>小机と電源（コンセント）</strong>がございます。</div></li>
-        <li><time datetime="2026-11-08">2026.11.08</time><div><span class="tag-new">NEW</span><a href="#program">プログラム</a>に当日の<strong>日程表</strong>を掲載し、各セッションのご案内を時間順に更新しました。</div></li>
-        <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#regist-block">事前参加登録の締切を11月12日（木）まで再延長</a>しました。お振込も<strong>11月12日（木）まで</strong>にお願いいたします。<strong>お振込が確認できない場合は、当日受付（当日参加費6,000円）</strong>となりますのでご注意ください。</div></li>
-        <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#qa-trainee">初期研修医・医学生の方のご参加</a>について、Q&amp;Aに掲載しました（日本形成外科学会への入会は不要です）。</div></li>
-        <li><time datetime="2026-11-07">2026.11.07</time><div><span class="tag-new">NEW</span><a href="#ads">他学会・研究会の幕間スライド</a>の受付を終了しました。</div></li>
       </ul>
       <div class="news-past">
         <div class="news-past-lbl">過去のお知らせ<span>（スクロールしてご覧いただけます）</span></div>
         <ul class="news-past-list" tabindex="0" aria-label="過去のお知らせ">
+        <li><time datetime="2026-11-08">2026.11.08</time><div><a href="#program">プログラム</a>に当日の<strong>日程表</strong>を掲載し、各セッションのご案内を時間順に更新しました。</div></li>
+        <li><time datetime="2026-11-07">2026.11.07</time><div><a href="#regist-block">事前参加登録の締切を11月12日（木）まで再延長</a>しました。お振込も<strong>11月12日（木）まで</strong>にお願いいたします。<strong>お振込が確認できない場合は、当日受付（当日参加費6,000円）</strong>となりますのでご注意ください。</div></li>
+        <li><time datetime="2026-11-07">2026.11.07</time><div><a href="#qa-trainee">初期研修医・医学生の方のご参加</a>について、Q&amp;Aに掲載しました（日本形成外科学会への入会は不要です）。</div></li>
+        <li><time datetime="2026-11-07">2026.11.07</time><div><a href="#ads">他学会・研究会の幕間スライド</a>の受付を終了しました。</div></li>
         <li><time datetime="2026-11-06">2026.11.06</time><div><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>の<strong>確定版</strong>を掲載しました（特別講演の演題名を追加）。</div></li>
         <li><time datetime="2026-11-05">2026.11.05</time><div><a href="program_abstracts.pdf?v=21" target="_blank" rel="noopener">プログラム・抄録集（PDF）</a>を更新しました（表記の一部修正）。</div></li>
         <li><time datetime="2026-11-02">2026.11.02</time><div><a href="#onsite-block">当日受付のご案内</a>を更新しました。参加証は<strong>印刷またはPDF画面のご提示</strong>で受付いたします（名札のご用意はございません）。</div></li>
@@ -350,114 +359,30 @@
   </div>
 </section>
 
-<!-- REGISTRATION -->
-<section id="registration">
+<!-- ON-SITE -->
+<section id="onsite" style="background:#fff;">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Registration</span>
-      <h2>各種登録</h2>
-      <p class="lead">下記フォームにご入力のうえ送信ボタンを押すと、事務局宛のメールが作成されます。そのままご送信ください。事務局よりご返信いたします。</p>
+      <span class="eyebrow">On-site Registration</span>
+      <h2>当日受付のご案内</h2>
+      <p class="lead">学会当日は、<strong style="color:var(--ink);">聖マリア病院 研究センター1階 使徒ヨハネ 井手一郎ホール前</strong>の参加受付でお手続きください。受付開始は<strong style="color:var(--ink);">12:00</strong>です。</p>
     </div>
 
-    <!-- 事前参加登録 -->
-    <!-- 事前参加登録（登録フォームへの導線） -->
-    <div class="reg-block" id="regist-block">
-      <div class="rb-head">
-        <span class="rb-no mincho">01 ── 事前参加登録</span>
-        <h3>事前参加登録</h3>
-      </div>
-      <p class="rb-desc">本学会は現地開催のみです。円滑な受付のため、事前のご登録にご協力ください。ご登録は下記の登録フォームから承ります（登録後、指定口座へお振込ください）。</p>
-
-      <div class="fee-badge">
-        <div class="fee"><span class="k">事前参加登録（銀行振込）</span><span class="v">5,000円</span></div>
-        <div class="fee"><span class="k">当日参加登録</span><span class="v">6,000円</span></div>
-      </div>
-      <p class="rb-desc" style="margin-top:-8px;">※ 振込手数料を考慮し、当日参加費を6,000円に設定しています。</p>
-
-      <div class="deadline">
-        <span class="dl-lbl">事前参加登録 締切</span>
-        <span class="dl-date mincho">2026年11月12日（木）</span>
-        <span class="dl-ext">再延長しました</span>
-        <span class="dl-old">前回：11月7日（土）</span>
-      </div>
-
-      <div class="pay-alert" role="note">
-        <div class="pa-title"><span class="pa-icon" aria-hidden="true">!</span>お振込が完了していない場合は、当日受付となります</div>
-        <p>事前参加登録は、<span class="pa-hl">フォームでのご登録と参加費のお振込の両方</span>が完了して成立します。<strong>ご登録・お振込とも、11月12日（木）まで</strong>にお済ませください。</p>
-        <p><strong>11月13日（金）17時の最終記帳までにお振込が確認できない場合は、当日受付（当日参加費 6,000円・現金のみ）</strong>となります。締切日（11月12日）にご登録の方は、<strong>同日中のお振込</strong>をお願いいたします。</p>
-      </div>
-
-      <div class="imp">
-        <div class="imp-title">事前参加登録に関する重要なお知らせ</div>
-        <ul>
-          <li><strong>事前参加登録の受付を2026年11月12日（木）まで再延長いたしました。</strong></li>
-          <li><strong>お振込も11月12日（木）までにお願いいたします。</strong>他行からのお振込や夕方以降のお振込は、反映が翌営業日になる場合があります。</li>
-          <li><strong>11月13日（金）17時に最終の記帳</strong>を行います。<strong>同日18時までに電子領収書のメールが届かない場合は、未登録扱い（当日受付）</strong>となります。</li>
-          <li>事前参加登録をされても、お振込が確認できない場合は<strong>当日受付（当日参加費 6,000円）</strong>となります。<strong>お振込済みで当日受付となった方は、受付でお振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</strong></li>
-          <li>お振込をされたのに電子領収書のメールが届かない方は、事務局（<a href="mailto:mokkox2@yahoo.co.jp" style="color:var(--teal-deep);font-weight:700;">mokkox2@yahoo.co.jp</a>）までご連絡ください。</li>
-          <li>事前参加登録を2回以上された場合は、<strong>最後にされたご登録を有効</strong>といたします。重複してお振込をされた場合は、事務局までご連絡ください。</li>
-          <li><strong>ご氏名は正確にご記入ください。</strong>領収書・参加証の作成と、当日受付でのご本人確認に使用いたします。</li>
-          <li><strong>当日は、参加証（PDF）を印刷してご持参いただくか、PDFの画面を受付でお見せください。</strong>名札（ネームホルダー）のご用意はございません。詳しくは<a href="#onsite-block" style="color:var(--teal-deep);font-weight:700;">〔当日受付のご案内〕</a>をご覧ください。</li>
-        </ul>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:22px 24px;margin-bottom:24px;">
-        <div class="mincho" style="font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:14px;">お振込み先</div>
-        <dl style="display:grid;grid-template-columns:96px 1fr;gap:10px 16px;font-size:.9rem;margin:0;">
-          <dt style="font-weight:700;color:var(--ink-soft);">口座名義</dt>
-          <dd style="margin:0;">第130回九州・沖縄形成外科学会事務局<br><span style="font-size:.76rem;color:var(--ink-soft);letter-spacing:.05em;">ダイヒャクサンジュッカイキュウシュウオキナワケイセイゲカガッカイジムキョク</span></dd>
-          <dt style="font-weight:700;color:var(--ink-soft);">金融機関</dt>
-          <dd style="margin:0;">三井住友銀行〔0009〕</dd>
-          <dt style="font-weight:700;color:var(--ink-soft);">取引支店</dt>
-          <dd style="margin:0;">久留米支店〔718〕</dd>
-          <dt style="font-weight:700;color:var(--ink-soft);">口座種類</dt>
-          <dd style="margin:0;">普通預金</dd>
-          <dt style="font-weight:700;color:var(--ink-soft);">口座番号</dt>
-          <dd style="margin:0;font-weight:700;">1281998</dd>
-        </dl>
-      </div>
-
-      <div style="background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid var(--amber);border-radius:6px;padding:14px 18px;margin-bottom:20px;font-size:.9rem;line-height:1.7;">
-        <strong style="color:var(--ink);">懇親会について：</strong>登録フォーム内に<strong>「懇親会のご参加」欄（参加の有無）</strong>がございます。お食事・送迎バスの手配のため、あわせてご参加の有無をお選びください。懇親会の詳細は、本ページ下部の<a href="#banquet" style="color:var(--teal-deep);font-weight:700;">〔懇親会のご案内〕</a>をご覧ください。
-      </div>
-
-      <a class="btn btn-primary" href="https://script.google.com/macros/s/AKfycbzjKErOv9ykTE6OOKdgcuizH8fobGHnCeBlSLbn0lbOQa4CknAaFluYkj9RXkhMUKfH/exec?page=join" target="_blank" rel="noopener" style="text-decoration:none;font-size:1.02rem;padding:16px 30px;">事前参加登録フォームへ進む →</a>
-      <p class="btn-note">※ ご登録後、11月12日（木）までに必ずお振込ください。お振込が確認できない場合は当日受付（6,000円）となります。</p>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px;">
-        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
-          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 1</div>
-          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">フォームにお名前・所属・メール・領収書の宛名などを入力して登録</p>
-        </div>
-        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
-          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 2</div>
-          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">受付確認メールが届きます。<strong style="color:var(--ink);">11月12日（木）までに</strong>指定口座へ参加費をお振込ください</p>
-        </div>
-        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
-          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 3</div>
-          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">入金確認後、正式な領収書No.と電子領収書（PDF）をメールでお送りします</p>
-        </div>
-        <div style="background:var(--paper);border-radius:6px;padding:18px 20px;">
-          <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.05rem;">STEP 4</div>
-          <p style="font-size:.85rem;color:var(--ink-soft);margin-top:4px;">あわせてお送りする<strong style="color:var(--ink);">参加証（PDF）</strong>を、印刷してご持参いただくか、<strong style="color:var(--ink);">PDFの画面を当日受付でお見せください</strong></p>
-        </div>
-      </div>
-
-      <p class="receipt-note">
-        <strong>領収書について：</strong>領収書No.（通し番号）は、<strong>当方でご入金を確認できた方にのみ</strong>後日メールでお送りします。ご入金確認後、ご登録のメールアドレス宛に<strong>電子領収書（PDF）</strong>をお送りします。宛名はフォームの「領収書の宛名」のとおり作成いたします。<br>
-        <strong>入金確認までのお時間について：</strong>業務の都合上、銀行への記帳は数日おきにまとめて行っているため、ご入金の確認・領収書の発行までお時間をいただきます。<strong>最終の記帳は11月13日（金）17時</strong>です。あらかじめご了承ください。<br>
-        <strong>※ 本学会は現役の医師のみで運営するお手製の学会です。行き届かない点もございますが、何卒ご容赦ください。</strong>
-      </p>
-    </div>
-
-    <!-- 当日受付 -->
     <div class="reg-block" id="onsite-block">
       <div class="rb-head">
-        <span class="rb-no mincho">02 ── 当日受付</span>
-        <h3>当日受付のご案内</h3>
+        <span class="rb-no mincho">── 受付の時間・場所</span>
+        <h3>参加受付</h3>
       </div>
-      <p class="rb-desc">学会当日は、会場の参加受付で参加のご確認をいたします。事前参加登録・お振込の状況によってお手続きが異なりますので、下記をご確認ください。</p>
+      <p class="rb-desc">事前参加登録・お振込の状況によってお手続きが異なります。下記の「事前参加登録・お振込がお済みの方」「当日受付の方」をご確認ください。</p>
 
+      <dl class="ov-table" style="margin-bottom:22px;">
+        <div class="ov-row"><dt>受付開始</dt><dd>2026年11月14日（土）12:00〜（プログラム・抄録集の日程表のとおり）<br>開会は12:25、第1セッションは12:30開始です。受付の混雑を避けるため、<strong style="color:var(--ink);">12:00〜12:20のご来場</strong>にご協力をお願いいたします。</dd></div>
+        <div class="ov-row"><dt>場 所</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール前</dd></div>
+        <div class="ov-row"><dt>当日参加費</dt><dd><strong style="color:var(--ink);">6,000円（現金のみ）</strong>。事前参加登録の受付は11月12日（木）で締め切りました。</dd></div>
+        <div class="ov-row"><dt>お振込済みで<br>当日受付の方</dt><dd>お振込が確認できず当日受付となった方は、お振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</dd></div>
+        <div class="ov-row"><dt>お車で<br>お越しの方</dt><dd><strong style="color:var(--ink);">駐車券を参加受付にご提示ください。</strong>駐車料金の割引処理を行います。懇親会にご参加の方も、日中のうちに受付で割引処理をお済ませください。詳しくは<a href="#access" style="color:var(--teal-deep);font-weight:700;">〔会場・アクセス〕</a>をご覧ください。</dd></div>
+        <div class="ov-row"><dt>懇親会</dt><dd><strong style="color:var(--ink);">事前のお申し込みは不要です。</strong>学術集会終了後、研究センター前から送迎バスにご乗車ください。<a href="#banquet" style="color:var(--teal-deep);font-weight:700;">〔懇親会のご案内〕</a></dd></div>
+      </dl>
       <div class="nohold">
         <span aria-hidden="true" style="font-size:1.1rem;line-height:1.5;">ⓘ</span>
         <div><strong>今回は、名札（ネームホルダー）のご用意はございません。</strong>参加証は受付でご提示いただくためのもので、会場内での着用は不要です。</div>
@@ -480,7 +405,7 @@
         <div class="ck-card alt">
           <div class="ck-lbl">ON-SITE</div>
           <h4>当日受付の方</h4>
-          <p style="font-size:.84rem;color:var(--ink-soft);margin:-6px 0 10px;line-height:1.7;">事前参加登録をされていない方、および<strong style="color:var(--ink);">ご登録後にお振込が確認できなかった方</strong></p>
+          <p style="font-size:.84rem;color:var(--ink-soft);margin:-6px 0 10px;line-height:1.7;">事前参加登録をされていない方、<strong style="color:var(--ink);">締切後にご登録された方</strong>、および<strong style="color:var(--ink);">ご登録後にお振込が確認できなかった方</strong></p>
           <ol>
             <li>受付で<strong>当日登録用紙</strong>に、お名前・ご所属をご記入ください。</li>
             <li>当日参加費<strong>6,000円（現金のみ）</strong>をお支払いください。</li>
@@ -493,8 +418,7 @@
         </div>
       </div>
 
-
-      <div class="rally" id="stamp-rally">
+      <div class="rally" id="stamp-rally" style="margin-bottom:0;">
         <div class="rally-head"><span class="ck-lbl">STAMP RALLY</span><h4>企業展示スタンプラリーのご案内</h4></div>
         <p class="rally-lead">学会当日、研究センター1階の企業展示会場でスタンプラリーを開催いたします。協賛企業様のブースをすべて回られた方に、受付でお飲み物をお渡しします。ぜひご参加ください。</p>
         <ol class="rally-steps">
@@ -510,76 +434,8 @@
         </div>
       </div>
 
-      <dl class="ov-table" style="margin-bottom:20px;">
-        <div class="ov-row"><dt>受付開始</dt><dd>2026年11月14日（土）12:00〜（プログラム・抄録集の日程表のとおり）<br>開会は12:25、第1セッションは12:30開始です。受付の混雑を避けるため、<strong style="color:var(--ink);">12:00〜12:20のご来場</strong>にご協力をお願いいたします。</dd></div>
-        <div class="ov-row"><dt>場 所</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール前</dd></div>
-        <div class="ov-row"><dt>お振込済みで<br>当日受付の方</dt><dd>お振込が確認できず当日受付となった方は、お振込の控え（ATMの明細、ネットバンキングの画面など）をご提示ください。追加のお支払いは不要です。</dd></div>
-        <div class="ov-row"><dt>お車で<br>お越しの方</dt><dd><strong style="color:var(--ink);">駐車券を参加受付にご提示ください。</strong>駐車料金の割引処理を行います。懇親会にご参加の方も、日中のうちに受付で割引処理をお済ませください。詳しくは<a href="#access" style="color:var(--teal-deep);font-weight:700;">〔会場・アクセス〕</a>をご覧ください。</dd></div>
-      </dl>
     </div>
 
-    <!-- 演者の方へ -->
-    <div class="reg-block" id="abstract-block">
-      <div class="rb-head">
-        <span class="rb-no mincho">03 ── 演者の方へ</span>
-        <h3>演者の方へ</h3>
-      </div>
-
-      <!-- 確定版 抄録集 -->
-      <div style="background:#fff;border:2px solid var(--teal);border-radius:8px;padding:26px 28px;margin-bottom:28px;">
-        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.3rem;line-height:1.6;margin-bottom:10px;">確定版のプログラム・抄録集を公開しました</div>
-        <p style="font-size:.95rem;color:var(--ink-soft);line-height:1.9;margin:0 0 18px;">
-          たくさんのご応募をいただき、誠にありがとうございました（演題登録の受付は終了いたしました）。<br>
-          ご発表の日時・セッションは下記の確定版にてご確認ください。
-        </p>
-        <a class="btn btn-primary" href="program_abstracts.pdf?v=21" target="_blank" rel="noopener" style="text-decoration:none;font-size:1.02rem;padding:16px 30px;">確定版の抄録集はこちら（PDF）→</a>
-      </div>
-
-      <div class="mincho" style="font-weight:700;font-size:1.25rem;color:var(--ink);margin-bottom:16px;">演者・座長の先生方へ</div>
-
-      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-bottom:20px;">
-        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.1rem;margin-bottom:10px;">一般演題の演者の先生方へ</div>
-        <ol style="font-size:.92rem;color:var(--ink-soft);line-height:1.85;margin:0;padding-left:1.6em;">
-          <li style="margin-bottom:8px;">発表時間は5分、討論時間は3分です。時間厳守にご協力ください。発表が延長した場合は討論時間を短縮させていただきます。</li>
-          <li style="margin-bottom:8px;">発表はすべてPCプレゼンテーション（PowerPoint）で行います。会場ではWindows PC（PowerPoint）をご用意いたします。</li>
-          <li style="margin-bottom:8px;">発表データはUSBフラッシュメモリでお持ちいただくか、ご自身のPCをお持ち込みください。Macintoshをご使用の方、動画を使用される方は、ご自身のPCをお持ちください。</li>
-          <li style="margin-bottom:8px;">映像の接続はHDMI端子に限ります。HDMI端子のないPCをお持ちの場合は、必ず変換アダプタをご持参ください。</li>
-          <li style="margin-bottom:8px;">発表開始30分前までに、PC受付（参加受付場所）にてデータの提出または持ち込みPCの動作確認をお済ませください。第1セッションの演者の先生方は12:20までにお願いいたします。</li>
-          <li style="margin-bottom:8px;">ご発表の5分前までに、会場前方の次演者席にご着席ください。</li>
-          <li style="margin-bottom:8px;">会場PCにコピーした発表データは、学会終了後に事務局が責任を持って消去いたします。</li>
-        </ol>
-      </div>
-      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-bottom:20px;">
-        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.1rem;margin-bottom:10px;">シンポジストの先生方へ</div>
-        <ol style="font-size:.92rem;color:var(--ink-soft);line-height:1.85;margin:0;padding-left:1.6em;">
-          <li style="margin-bottom:8px;">発表時間はお一人10分です。全演者のご発表後に総合討論を行います。</li>
-          <li style="margin-bottom:8px;">データの受付・接続方法は一般演題と同様です。シンポジウム開始30分前までにPC受付をお済ませください。</li>
-        </ol>
-      </div>
-      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-bottom:20px;">
-        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.1rem;margin-bottom:10px;">座長の先生方へ</div>
-        <ol style="font-size:.92rem;color:var(--ink-soft);line-height:1.85;margin:0;padding-left:1.6em;">
-          <li style="margin-bottom:8px;">担当セッション開始10分前までに、会場前方の次座長席にご着席ください。</li>
-          <li style="margin-bottom:8px;">担当セッションの進行は座長の先生にご一任いたします。終了時刻の厳守にご協力ください。</li>
-        </ol>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- OVERVIEW -->
-<section id="overview" style="background:#fff;">
-  <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Overview</span><h2>開催概要</h2></div>
-    <dl class="ov-table">
-      <div class="ov-row"><dt>大会名</dt><dd>第130回 九州・沖縄形成外科学会学術集会</dd></div>
-      <div class="ov-row"><dt>テーマ</dt><dd>外科教育</dd></div>
-      <div class="ov-row"><dt>会 期</dt><dd>2026年11月14日（土）</dd></div>
-      <div class="ov-row"><dt>会 場</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール（現地開催のみ）<br><span style="font-size:.86rem;">230席（各席に小机・電源コンセントあり）<a href="#venue-info" style="color:var(--teal-deep);font-weight:700;">〔会場のご案内〕</a></span></dd></div>
-      <div class="ov-row"><dt>会 長</dt><dd>林 稔（聖マリア病院 形成外科診療部長）</dd></div>
-      <div class="ov-row"><dt>参加費</dt><dd>事前参加登録 5,000円／当日参加登録 6,000円<br><span style="font-size:.86rem;">事前参加登録の締切：2026年11月12日（木）（ご登録・お振込とも）。お振込が確認できない場合は当日受付となります。<a href="#regist-block" style="color:var(--teal-deep);font-weight:700;">〔事前参加登録〕</a><br>初期研修医・医学生の方は、日本形成外科学会への入会は不要です（参加費は同額です）。<a href="#qa-trainee" style="color:var(--teal-deep);font-weight:700;">〔Q&amp;A〕</a></span></dd></div>
-    </dl>
   </div>
 </section>
 
@@ -632,99 +488,8 @@
   </div>
 </section>
 
-<!-- BANQUET -->
-<section id="banquet">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Banquet</span>
-      <h2>懇親会のご案内</h2>
-      <p class="lead">学術集会終了後、懇親会（立食パーティ）を開催いたします。参加者相互の親睦の場として、初期研修医・医学生の方も含め、皆様のご参加をお待ちしております。</p>
-    </div>
-
-    <div class="reg-block">
-      <div class="rb-head">
-        <span class="rb-no mincho">── 懇親会</span>
-        <h3>立食パーティ</h3>
-      </div>
-      <p class="rb-desc">学会会場と懇親会会場の間は、行き・帰りともにマイクロバスで送迎いたします。お子様もご一緒にご参加いただけますので、皆様お誘い合わせのうえ、ぜひご参加ください。</p>
-
-      <dl class="ov-table" style="margin-bottom:24px;">
-        <div class="ov-row"><dt>日 時</dt><dd>2026年11月14日（土）18:30〜</dd></div>
-        <div class="ov-row"><dt>会 場</dt><dd>ハイネスホテル久留米（西鉄久留米駅前）</dd></div>
-        <div class="ov-row"><dt>形 式</dt><dd>立食パーティ</dd></div>
-        <div class="ov-row"><dt>会 費</dt><dd>無料（お子様も無料です）</dd></div>
-        <div class="ov-row"><dt>お子様</dt><dd>ご参加いただけます。送迎のマイクロバスにも、保護者の方とご一緒にご乗車いただけます。</dd></div>
-        <div class="ov-row"><dt>送 迎<br>（行き）</dt><dd>学術集会終了後、<strong style="color:var(--ink);">聖マリア病院 研究センター前</strong>から乗車いただけます。ハイネスホテル久留米までマイクロバスでピストン輸送いたします。</dd></div>
-        <div class="ov-row"><dt>送 迎<br>（帰り）</dt><dd>懇親会終了後、<strong style="color:var(--ink);">ハイネスホテル久留米の玄関前（西鉄久留米駅前 中央広場）</strong>から、聖マリア病院 研究センター前までマイクロバスを運行いたします。<br>出発時刻は決まり次第、本ページでお知らせいたします。</dd></div>
-      </dl>
-
-      <div class="imp">
-        <div class="imp-title">お車でお越しの方へ</div>
-        <ul>
-          <li>聖マリア病院の駐車券は、<strong>学会の参加受付（研究センター1階）に日中のうちにご提示いただき、割引処理をお済ませください。</strong>懇親会後にお車をお出しになる場合も、事前に処理が必要です。</li>
-          <li>病院の患者用駐車場は、夜間も時間の制限なく出庫いただけます。帰りの送迎バスで研究センター前に戻られたあと、そのままお車でお帰りいただけます。</li>
-          <li><strong>お車でお越しの方は、懇親会での飲酒をお控えください（または運転代行をご利用ください）。</strong></li>
-        </ul>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;">
-        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
-          <strong style="color:var(--ink);">人数把握へのご協力のお願い</strong><br>
-          事前準備（お食事・マイクロバスの手配等）のため、参加人数の把握が必要です。<strong style="color:var(--ink);">事前参加登録フォームの「懇親会のご参加」欄</strong>にて、ご参加の有無をお知らせください。ご協力のほど、よろしくお願い申し上げます。
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Q&A（参加者向け） -->
-<section id="qa" style="background:#fff;">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Q&amp;A</span>
-      <h2>参加者の皆様からのご質問</h2>
-      <p class="lead">いただいたご質問について、情報共有のためホームページ上で回答いたします。</p>
-    </div>
-
-    <div class="reg-block">
-      <div class="rb-head">
-        <span class="rb-no mincho">── Q&amp;A</span>
-        <h3>お問い合わせへの回答</h3>
-      </div>
-
-      <div id="qa-trainee" style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-top:16px;scroll-margin-top:80px;">
-        <p style="font-size:.92rem;color:var(--ink);font-weight:700;margin:0 0 8px;">Q．日本形成外科学会に入会していない初期研修医・医学生でも参加できますか。</p>
-        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
-          はい、ご参加いただけます。<br>
-          本会は、原則として日本形成外科学会会員のうち九州・沖縄地区に所属されている方を対象としておりますが、九州・沖縄形成外科学会事務局に確認いたしましたところ、<strong style="color:var(--ink);">初期研修医および医学生の方は、入会の必要なく、参加費のみでご参加いただけます。</strong><br>
-          参加費・お申込み方法は、会員の方と同じです（事前参加登録 5,000円／当日参加 6,000円）。<a href="#regist-block" style="color:var(--teal-deep);font-weight:700;">〔事前参加登録〕</a>からお申込みください。<br>
-          懇親会（会費無料）にもご参加いただけます。登録フォームの「懇親会のご参加」欄でお知らせください。形成外科の先生方と交流できる機会ですので、ぜひお気軽にご参加ください。<br>
-          なお、専攻医の方は、日本形成外科学会にご入会のうえご参加ください。
-        </p>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-top:16px;">
-        <p style="font-size:.92rem;color:var(--ink);font-weight:700;margin:0 0 8px;">Q．会場に託児所はありますか。</p>
-        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
-          誠に申し訳ございませんが、託児所のご用意はございません。<br>
-          代わりに、学会当日は<strong style="color:var(--ink);">研究センター内のカフェスペースを開放</strong>し、お菓子などをご用意する予定です。お子様とご一緒にご利用ください。<br>
-          なお、スタッフによるお子様のお預かりは行っておりません。お子様の見守りは、保護者の方にお願いいたします。
-        </p>
-      </div>
-
-      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-top:16px;">
-        <p style="font-size:.92rem;color:var(--ink);font-weight:700;margin:0 0 8px;">Q．懇親会に子どもを連れて参加できますか。</p>
-        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
-          はい、<strong style="color:var(--ink);">お子様もご参加いただけます。会費は無料</strong>です。学会会場と懇親会会場を結ぶマイクロバスにも、保護者の方とご一緒にご乗車いただけます。<br>
-          懇親会の詳細は<a href="#banquet" style="color:var(--teal-deep);font-weight:700;">〔懇親会のご案内〕</a>をご覧ください。
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ACCESS -->
-<section id="access">
+<section id="access" style="background:#fff;">
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">Access</span><h2>会場・アクセス</h2></div>
     <div class="access-grid">
@@ -782,8 +547,170 @@
   </div>
 </section>
 
+<!-- BANQUET -->
+<section id="banquet">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Banquet</span>
+      <h2>懇親会のご案内</h2>
+      <p class="lead">学術集会終了後、懇親会（立食パーティ）を開催いたします。参加者相互の親睦の場として、初期研修医・医学生の方も含め、皆様のご参加をお待ちしております。</p>
+    </div>
+
+    <div class="reg-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── 懇親会</span>
+        <h3>立食パーティ</h3>
+      </div>
+      <p class="rb-desc">学会会場と懇親会会場の間は、行き・帰りともにマイクロバスで送迎いたします。お子様もご一緒にご参加いただけますので、皆様お誘い合わせのうえ、ぜひご参加ください。</p>
+
+      <dl class="ov-table" style="margin-bottom:24px;">
+        <div class="ov-row"><dt>日 時</dt><dd>2026年11月14日（土）18:30〜</dd></div>
+        <div class="ov-row"><dt>会 場</dt><dd>ハイネスホテル久留米（西鉄久留米駅前）</dd></div>
+        <div class="ov-row"><dt>形 式</dt><dd>立食パーティ</dd></div>
+        <div class="ov-row"><dt>会 費</dt><dd>無料（お子様も無料です）</dd></div>
+        <div class="ov-row"><dt>お子様</dt><dd>ご参加いただけます。送迎のマイクロバスにも、保護者の方とご一緒にご乗車いただけます。</dd></div>
+        <div class="ov-row"><dt>送 迎<br>（行き）</dt><dd>学術集会終了後、<strong style="color:var(--ink);">聖マリア病院 研究センター前</strong>から乗車いただけます。ハイネスホテル久留米までマイクロバスでピストン輸送いたします。</dd></div>
+        <div class="ov-row"><dt>送 迎<br>（帰り）</dt><dd>懇親会終了後、<strong style="color:var(--ink);">ハイネスホテル久留米の玄関前（西鉄久留米駅前 中央広場）</strong>から、聖マリア病院 研究センター前までマイクロバスを運行いたします。<br>出発時刻は決まり次第、本ページでお知らせいたします。</dd></div>
+      </dl>
+
+      <div class="imp">
+        <div class="imp-title">お車でお越しの方へ</div>
+        <ul>
+          <li>聖マリア病院の駐車券は、<strong>学会の参加受付（研究センター1階）に日中のうちにご提示いただき、割引処理をお済ませください。</strong>懇親会後にお車をお出しになる場合も、事前に処理が必要です。</li>
+          <li>病院の患者用駐車場は、夜間も時間の制限なく出庫いただけます。帰りの送迎バスで研究センター前に戻られたあと、そのままお車でお帰りいただけます。</li>
+          <li><strong>お車でお越しの方は、懇親会での飲酒をお控えください（または運転代行をご利用ください）。</strong></li>
+        </ul>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;">
+        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
+          <strong style="color:var(--ink);">ご参加のお申し込みについて</strong><br>
+          <strong style="color:var(--ink);">事前のお申し込みがない方も、どなたでもご参加いただけます。</strong>学術集会終了後、研究センター前から送迎バスにご乗車ください。皆様のご参加を心よりお待ちしております。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKERS -->
+<section id="speakers" style="background:#fff;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">For Speakers &amp; Chairs</span>
+      <h2>演者・座長の先生方へ</h2>
+      <p class="lead">PC受付は参加受付（研究センター1階 井手一郎ホール前）と同じ場所です。発表開始30分前までに、データの提出または持ち込みPCの動作確認をお済ませください。</p>
+    </div>
+
+    <div class="reg-block" id="abstract-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── 演者・シンポジスト・座長</span>
+        <h3>ご発表・ご司会のご案内</h3>
+      </div>
+
+      <!-- 確定版 抄録集 -->
+      <div style="background:#fff;border:2px solid var(--teal);border-radius:8px;padding:26px 28px;margin-bottom:24px;">
+        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.3rem;line-height:1.6;margin-bottom:10px;">確定版のプログラム・抄録集を公開しました</div>
+        <p style="font-size:.95rem;color:var(--ink-soft);line-height:1.9;margin:0 0 18px;">
+          たくさんのご応募をいただき、誠にありがとうございました（演題登録の受付は終了いたしました）。<br>
+          ご発表の日時・セッションは下記の確定版にてご確認ください。
+        </p>
+        <a class="btn btn-primary" href="program_abstracts.pdf?v=21" target="_blank" rel="noopener" style="text-decoration:none;font-size:1.02rem;padding:16px 30px;">確定版の抄録集はこちら（PDF）→</a>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-bottom:20px;">
+        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.1rem;margin-bottom:10px;">一般演題の演者の先生方へ</div>
+        <ol style="font-size:.92rem;color:var(--ink-soft);line-height:1.85;margin:0;padding-left:1.6em;">
+          <li style="margin-bottom:8px;">発表時間は5分、討論時間は3分です。時間厳守にご協力ください。発表が延長した場合は討論時間を短縮させていただきます。</li>
+          <li style="margin-bottom:8px;">発表はすべてPCプレゼンテーション（PowerPoint）で行います。会場ではWindows PC（PowerPoint）をご用意いたします。</li>
+          <li style="margin-bottom:8px;">発表データはUSBフラッシュメモリでお持ちいただくか、ご自身のPCをお持ち込みください。Macintoshをご使用の方、動画を使用される方は、ご自身のPCをお持ちください。</li>
+          <li style="margin-bottom:8px;">映像の接続はHDMI端子に限ります。HDMI端子のないPCをお持ちの場合は、必ず変換アダプタをご持参ください。</li>
+          <li style="margin-bottom:8px;">発表開始30分前までに、PC受付（参加受付場所）にてデータの提出または持ち込みPCの動作確認をお済ませください。第1セッションの演者の先生方は12:20までにお願いいたします。</li>
+          <li style="margin-bottom:8px;">ご発表の5分前までに、会場前方の次演者席にご着席ください。</li>
+          <li style="margin-bottom:8px;">会場PCにコピーした発表データは、学会終了後に事務局が責任を持って消去いたします。</li>
+        </ol>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-bottom:20px;">
+        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.1rem;margin-bottom:10px;">シンポジストの先生方へ</div>
+        <ol style="font-size:.92rem;color:var(--ink-soft);line-height:1.85;margin:0;padding-left:1.6em;">
+          <li style="margin-bottom:8px;">発表時間はお一人10分です。全演者のご発表後に総合討論を行います。</li>
+          <li style="margin-bottom:8px;">データの受付・接続方法は一般演題と同様です。シンポジウム開始30分前までにPC受付をお済ませください。</li>
+        </ol>
+      </div>
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-bottom:0;">
+        <div class="mincho" style="color:var(--teal);font-weight:700;font-size:1.1rem;margin-bottom:10px;">座長の先生方へ</div>
+        <ol style="font-size:.92rem;color:var(--ink-soft);line-height:1.85;margin:0;padding-left:1.6em;">
+          <li style="margin-bottom:8px;">担当セッション開始10分前までに、会場前方の次座長席にご着席ください。</li>
+          <li style="margin-bottom:8px;">担当セッションの進行は座長の先生にご一任いたします。終了時刻の厳守にご協力ください。</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Q&A（参加者向け） -->
+<section id="qa">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Q&amp;A</span>
+      <h2>参加者の皆様からのご質問</h2>
+      <p class="lead">いただいたご質問について、情報共有のためホームページ上で回答いたします。</p>
+    </div>
+
+    <div class="reg-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── Q&amp;A</span>
+        <h3>お問い合わせへの回答</h3>
+      </div>
+
+      <div id="qa-trainee" style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-top:16px;scroll-margin-top:80px;">
+        <p style="font-size:.92rem;color:var(--ink);font-weight:700;margin:0 0 8px;">Q．日本形成外科学会に入会していない初期研修医・医学生でも参加できますか。</p>
+        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
+          はい、ご参加いただけます。<br>
+          本会は、原則として日本形成外科学会会員のうち九州・沖縄地区に所属されている方を対象としておりますが、九州・沖縄形成外科学会事務局に確認いたしましたところ、<strong style="color:var(--ink);">初期研修医および医学生の方は、入会の必要なく、参加費のみでご参加いただけます。</strong><br>
+          事前参加登録の受付は11月12日（木）で締め切りましたので、学会当日に<strong style="color:var(--ink);">当日受付（当日参加費 6,000円・現金のみ）</strong>にてお手続きください。<a href="#onsite" style="color:var(--teal-deep);font-weight:700;">〔当日受付のご案内〕</a><br>
+          懇親会（会費無料）にもご参加いただけます。事前のお申し込みは不要です。形成外科の先生方と交流できる機会ですので、ぜひお気軽にご参加ください。<br>
+          なお、専攻医の方は、日本形成外科学会にご入会のうえご参加ください。
+        </p>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-top:16px;">
+        <p style="font-size:.92rem;color:var(--ink);font-weight:700;margin:0 0 8px;">Q．会場に託児所はありますか。</p>
+        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
+          誠に申し訳ございませんが、託児所のご用意はございません。<br>
+          代わりに、学会当日は<strong style="color:var(--ink);">研究センター内のカフェスペースを開放</strong>し、お菓子などをご用意する予定です。お子様とご一緒にご利用ください。<br>
+          なお、スタッフによるお子様のお預かりは行っておりません。お子様の見守りは、保護者の方にお願いいたします。
+        </p>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:20px 24px;margin-top:16px;">
+        <p style="font-size:.92rem;color:var(--ink);font-weight:700;margin:0 0 8px;">Q．懇親会に子どもを連れて参加できますか。</p>
+        <p style="font-size:.92rem;color:var(--ink-soft);line-height:1.95;margin:0;">
+          はい、<strong style="color:var(--ink);">お子様もご参加いただけます。会費は無料</strong>です。学会会場と懇親会会場を結ぶマイクロバスにも、保護者の方とご一緒にご乗車いただけます。<br>
+          懇親会の詳細は<a href="#banquet" style="color:var(--teal-deep);font-weight:700;">〔懇親会のご案内〕</a>をご覧ください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" style="background:#fff;">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Overview</span><h2>開催概要</h2></div>
+    <dl class="ov-table">
+      <div class="ov-row"><dt>大会名</dt><dd>第130回 九州・沖縄形成外科学会学術集会</dd></div>
+      <div class="ov-row"><dt>テーマ</dt><dd>外科教育</dd></div>
+      <div class="ov-row"><dt>会 期</dt><dd>2026年11月14日（土）</dd></div>
+      <div class="ov-row"><dt>会 場</dt><dd>聖マリア病院 研究センター 1階 使徒ヨハネ 井手一郎ホール（現地開催のみ）<br><span style="font-size:.86rem;">230席（各席に小机・電源コンセントあり）<a href="#venue-info" style="color:var(--teal-deep);font-weight:700;">〔会場のご案内〕</a></span></dd></div>
+      <div class="ov-row"><dt>会 長</dt><dd>林 稔（聖マリア病院 形成外科診療部長）</dd></div>
+      <div class="ov-row"><dt>参加費</dt><dd>事前参加登録 5,000円（受付終了）／当日参加登録 6,000円（現金のみ）<br><span style="font-size:.86rem;">事前参加登録は11月12日（木）で締め切りました。これからご参加の方は当日受付にてお手続きください。<a href="#onsite" style="color:var(--teal-deep);font-weight:700;">〔当日受付のご案内〕</a><br>初期研修医・医学生の方は、日本形成外科学会への入会は不要です（参加費は同額です）。<a href="#qa-trainee" style="color:var(--teal-deep);font-weight:700;">〔Q&amp;A〕</a></span></dd></div>
+    </dl>
+  </div>
+</section>
+
 <!-- EXHIBITORS -->
-<section id="exhibitors" style="background:#fff;">
+<section id="exhibitors">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">For Exhibitors</span>
@@ -841,6 +768,82 @@
       </div>
       <p class="rb-desc" style="margin:20px 0 0;">何卒よろしくお願い申し上げます。</p>
     </div>
+  </div>
+</section>
+
+<!-- REGISTRATION（受付終了） -->
+<section id="registration" style="background:#fff;">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Pre-registration</span>
+      <h2>事前参加登録（受付終了）</h2>
+      <p class="lead">事前参加登録の受付は終了いたしました。ご登録済みの方へのお知らせと、お振込み先・領収書についてのご案内を掲載しています。</p>
+    </div>
+
+    <div class="reg-block" id="regist-block">
+      <div class="rb-head">
+        <span class="rb-no mincho">── 11月12日（木）締切</span>
+        <h3>事前参加登録</h3>
+      </div>
+      <p class="rb-desc">事前参加登録の受付は、<strong style="color:var(--ink);">2026年11月12日（木）をもって締め切りました</strong>。たくさんのご登録をいただき、誠にありがとうございました。これからご参加の方は、学会当日に<a href="#onsite" style="color:var(--teal-deep);font-weight:700;">〔当日受付〕</a>でお手続きください（当日参加費 6,000円・現金のみ）。</p>
+
+      <div class="fee-badge">
+        <div class="fee"><span class="k">事前参加登録（受付終了）</span><span class="v">5,000円</span></div>
+        <div class="fee"><span class="k">当日参加登録</span><span class="v">6,000円</span></div>
+      </div>
+      <p class="rb-desc" style="margin-top:-8px;">※ 振込手数料を考慮し、当日参加費を6,000円に設定しています。</p>
+
+      <div class="deadline">
+        <span class="dl-lbl">事前参加登録</span>
+        <span class="dl-date mincho">受付終了</span>
+        <span class="dl-closed">11月12日（木）で締め切りました</span>
+      </div>
+
+      <div class="pay-alert" role="note">
+        <div class="pa-title"><span class="pa-icon" aria-hidden="true">!</span>ご登録済みの方へ：お振込の確認について</div>
+        <p><strong>11月13日（金）17時に最終の記帳</strong>を行います。<strong>同日18時までに電子領収書・参加証のメールが届かない場合は、当日受付（当日参加費 6,000円・現金のみ）</strong>となります。</p>
+        <p>お振込済みで当日受付となった方は、受付で<span class="pa-hl">お振込の控え（ATMの明細、ネットバンキングの画面など）</span>をご提示ください。追加のお支払いは不要です。</p>
+      </div>
+
+      <div class="imp">
+        <div class="imp-title">ご登録済みの方へのお知らせ</div>
+        <ul>
+          <li><strong>当日は、参加証（PDF）を印刷してご持参いただくか、PDFの画面を受付でお見せください。</strong>名札（ネームホルダー）のご用意はございません。詳しくは<a href="#onsite" style="color:var(--teal-deep);font-weight:700;">〔当日受付のご案内〕</a>をご覧ください。</li>
+          <li>お振込をされたのに電子領収書のメールが届かない方は、事務局（<a href="mailto:mokkox2@yahoo.co.jp" style="color:var(--teal-deep);font-weight:700;">mokkox2@yahoo.co.jp</a>）までご連絡ください。</li>
+          <li>事前参加登録を2回以上された場合は、<strong>最後にされたご登録を有効</strong>といたします。重複してお振込をされた場合は、事務局までご連絡ください。</li>
+        </ul>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:6px;padding:22px 24px;margin-bottom:24px;">
+        <div class="mincho" style="font-weight:700;font-size:1.05rem;color:var(--ink);margin-bottom:14px;">お振込み先<span style="font-family:'Noto Sans JP',sans-serif;font-weight:400;font-size:.8rem;color:var(--ink-soft);margin-left:8px;">（11月12日までにご登録の方）</span></div>
+        <dl style="display:grid;grid-template-columns:96px 1fr;gap:10px 16px;font-size:.9rem;margin:0;">
+          <dt style="font-weight:700;color:var(--ink-soft);">口座名義</dt>
+          <dd style="margin:0;">第130回九州・沖縄形成外科学会事務局<br><span style="font-size:.76rem;color:var(--ink-soft);letter-spacing:.05em;">ダイヒャクサンジュッカイキュウシュウオキナワケイセイゲカガッカイジムキョク</span></dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">金融機関</dt>
+          <dd style="margin:0;">三井住友銀行〔0009〕</dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">取引支店</dt>
+          <dd style="margin:0;">久留米支店〔718〕</dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">口座種類</dt>
+          <dd style="margin:0;">普通預金</dd>
+          <dt style="font-weight:700;color:var(--ink-soft);">口座番号</dt>
+          <dd style="margin:0;font-weight:700;">1281998</dd>
+        </dl>
+      </div>
+
+      <div style="background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid var(--amber);border-radius:6px;padding:14px 18px;margin-bottom:20px;font-size:.9rem;line-height:1.7;">
+        <strong style="color:var(--ink);">懇親会について：</strong>事前のお申し込みがない方も、どなたでもご参加いただけます（会費無料）。詳しくは<a href="#banquet" style="color:var(--teal-deep);font-weight:700;">〔懇親会のご案内〕</a>をご覧ください。
+      </div>
+
+      <a class="btn btn-ghost" href="https://script.google.com/macros/s/AKfycbzjKErOv9ykTE6OOKdgcuizH8fobGHnCeBlSLbn0lbOQa4CknAaFluYkj9RXkhMUKfH/exec?page=join" target="_blank" rel="noopener" style="text-decoration:none;font-size:.98rem;padding:14px 26px;">事前参加登録フォーム →</a>
+      <p class="btn-note">※ 受付は11月12日（木）で締め切りました。締切後にご登録いただいた場合は、<strong>当日受付（当日参加費 6,000円・現金のみ）</strong>となります。お振込はなさらず、当日受付でお支払いください。</p>
+
+      <p class="receipt-note" style="margin-top:28px;">
+        <strong>領収書について：</strong>領収書No.（通し番号）は、<strong>当方でご入金を確認できた方にのみ</strong>後日メールでお送りします。ご入金確認後、ご登録のメールアドレス宛に<strong>電子領収書（PDF）</strong>をお送りします。宛名はフォームの「領収書の宛名」のとおり作成いたします。<br>
+        <strong>入金確認までのお時間について：</strong>業務の都合上、銀行への記帳は数日おきにまとめて行っているため、ご入金の確認・領収書の発行までお時間をいただきます。<strong>最終の記帳は11月13日（金）17時</strong>です。あらかじめご了承ください。<br>
+        <strong>※ 本学会は現役の医師のみで運営するお手製の学会です。行き届かない点もございますが、何卒ご容赦ください。</strong>
+      </p>
+    </div>
+
   </div>
 </section>
 
